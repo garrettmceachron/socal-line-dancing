@@ -663,14 +663,6 @@ var alesmithBrewing = L.marker([32.88819049895642, -117.14984995237307], {
 	}
 }).addTo(map); 
 
-var starlightDanceStudio = L.marker([32.76703208737339, -117.0594893585919], {
-	title: 'Starlight Dance Studio',
-	label: 'Starlight Dance Studio',
-	labelOptions: {
-	noHide: false
-	}
-}).addTo(map);  
-
 var inzaneBrewing = L.marker([33.20276061518543, -117.24184505512423], {
 	title: 'Inzane Brewing',
 	label: 'Inzane Brewing',
@@ -776,7 +768,6 @@ function showNames() {
 	mavericksClub.bindTooltip('Mavericks Beach Club', { permanent: true, direction: 'bottom', offset: [-15, 46] });
 	maverickSaloon.bindTooltip('Maverick Saloon', { permanent: true, direction: 'bottom', offset: [-15, 56] });
 	alesmithBrewing.bindTooltip('Alesmith Brewing', { permanent: true, direction: 'bottom', offset: [-15, 26] });
-	starlightDanceStudio.bindTooltip('Starlight Dance Studio', { permanent: true, direction: 'bottom', offset: [-15, 26] });
 	inzaneBrewing.bindTooltip('Inzane Brewing', { permanent: true, direction: 'bottom', offset: [-15, 26] });
 	losGlobos.bindTooltip('Los Globos', { permanent: true, direction: 'bottom', offset: [-15, 26] });
 	theParamount.bindTooltip('The Paramount', { permanent: true, direction: 'bottom', offset: [-15, 46] });
@@ -848,7 +839,6 @@ function showNames() {
 	mavericksClub.unbindTooltip();
 	maverickSaloon.unbindTooltip();
 	alesmithBrewing.unbindTooltip();
-	starlightDanceStudio.unbindTooltip();
 	inzaneBrewing.unbindTooltip();
 	losGlobos.unbindTooltip();
 	theParamount.unbindTooltip();
@@ -935,7 +925,6 @@ secondFloor.bindPopup("<span class='venuePopupTitle'>2nd Floor, Huntington Beach
 mavericksClub.bindPopup("<span class='venuePopupTitle'>Mavericks Beach Club, San Diego</b></span><br>Every Thursday</b><br><b> 7:00pm - Close</br><b>Boot Scootin' Phillip & DJs</b><br><span class='card-tag'>21+</span>&nbsp<span class='card-tag'>Free</span><br><br><a target='_blank' href='https://maps.app.goo.gl/PPgBFZjA6neXKwaYA'>Google Maps</a><a style='color: black;'>&nbsp|&nbsp</a><a target='_blank' href='https://www.instagram.com/mavericksbeachclub/'>Instagram</a>").addTo(all);
 maverickSaloon.bindPopup("<span class='venuePopupTitle'>Maverick Saloon, Norco</b></span><br>Every Friday and Saturday</b><br><a target='_blank' href='https://www.instagram.com/themavericksaloon/'>Click for Schedule</a><br><b> Usually 6:00pm - 9:00pm</br><b>Varied</b><br><span class='card-tag'>21+</span>&nbsp<span class='card-tag'>Free</span><br><br><a target='_blank' href='https://maps.app.goo.gl/h2s69mTcELRP5vtm9'>Google Maps</a><a style='color: black;'>&nbsp|&nbsp</a><a target='_blank' href='https://www.instagram.com/themavericksaloon/'>Instagram</a>").addTo(all);
 alesmithBrewing.bindPopup("<span class='venuePopupTitle'>Alesmith Brewing, San Diego</b></span><br>Every Monday</b><br><b> 6:00pm - 9:00pm</br><b>Varied</b><br><span class='card-tag'>All Ages</span><br><span class='card-tag'>Free Drink With Entry</span><br><br><a target='_blank' href='https://maps.app.goo.gl/RuFCi9TSAQ2vhEQR8'>Google Maps</a><a style='color: black;'>&nbsp|&nbsp</a><a target='_blank' href='https://www.instagram.com/alesmithbrewing/'>Instagram</a>").addTo(all);
-starlightDanceStudio.bindPopup("<span class='venuePopupTitle'>Starlight Dance Studio, San Diego</b></span><br>Every 1st and 3rd Fridays</b><br><a target='_blank' href='https://www.starlightdance.com/calendar'>Click for Schedule</a><br><b> 7:00pm - 12:00am</br><b>Varied</b><br><span class='card-tag'>Country Swing & Line Dance</span><br><br><a target='_blank' href='https://maps.app.goo.gl/gBYjB5bv3wcU7zLt6'>Google Maps</a><a style='color: black;'>&nbsp|&nbsp</a><a target='_blank' href='https://www.instagram.com/starlightdancesd/'>Instagram</a>").addTo(all);
 inzaneBrewing.bindPopup("<span class='venuePopupTitle'>Inzane Brewing, San Diego</b></span><br>Every Sunday and Thursday</b><br><b>Sundays 3pm - 10pm,<br>Thursdays 6pm - 10pm.</br><b>Varied</b><br><span class='card-tag'>All Ages</span>&nbsp<span class='card-tag'>Early Lessons</span><br><br><a target='_blank' href='https://maps.app.goo.gl/ZmrxWWgamSFEfYdTA'>Google Maps</a><a style='color: black;'>&nbsp|&nbsp</a><a target='_blank' href='https://www.instagram.com/inzane_brewing/'>Instagram</a>").addTo(all);
 losGlobos.bindPopup("<span class='venuePopupTitle'>Los Globos, Los Angeles</b></span><br>Every Monday</b><br><b>8:00pm - 12:00am.</br><b>Stud Country</b><br><span class='card-tag'>21+</span>&nbsp<span class='card-tag'>Queer Line Dancing</span><br><br><a target='_blank' href='https://maps.app.goo.gl/hqFX6ZsLZoMDPbGQ6'>Google Maps</a><a style='color: black;'>&nbsp|&nbsp</a><a target='_blank' href='https://www.instagram.com/stud.country/'>Instagram</a>").addTo(all);
 theParamount.bindPopup("<span class='venuePopupTitle'>The Paramount,<br>Los Angeles</b></span><br>Every Thursday</b><br><b>8:00pm - 12:00am.</br><b>Stud Country</b><br><span class='card-tag'>21+</span>&nbsp<span class='card-tag'>Queer Line Dancing</span><br><br><a target='_blank' href='https://maps.app.goo.gl/saKX7QZg4dZXEjM98'>Google Maps</a><a style='color: black;'>&nbsp|&nbsp</a><a target='_blank' href='https://www.instagram.com/stud.country/'>Instagram</a>").addTo(all);
@@ -1418,14 +1407,6 @@ maverickSaloon.on('click', function(e){
 });
 
 alesmithBrewing.on('click', function(e){
-	if (currentZoom < 12)
-    	map.setView(e.target.getLatLng(), markerZoomLevel);
-	else  if (currentZoom == 12 || currentZoom == 13)
-		map.setView(e.target.getLatLng());
-
-});
-
-starlightDanceStudio.on('click', function(e){
 	if (currentZoom < 12)
     	map.setView(e.target.getLatLng(), markerZoomLevel);
 	else  if (currentZoom == 12 || currentZoom == 13)

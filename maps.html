@@ -1430,14 +1430,6 @@ losGlobos.on('click', function(e){
 
 });
 
-losGlobos.on('click', function(e){
-	if (currentZoom < 12)
-    	map.setView(e.target.getLatLng(), markerZoomLevel);
-	else  if (currentZoom == 12 || currentZoom == 13)
-		map.setView(e.target.getLatLng());
-
-});
-
 theParamount.on('click', function(e){
 	if (currentZoom < 12)
     	map.setView(e.target.getLatLng(), markerZoomLevel);

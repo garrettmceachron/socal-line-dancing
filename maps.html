@@ -711,6 +711,14 @@ var theBarn = L.marker([34.25154462089485, -118.92147448769454], {
 	}
 }).addTo(map);
 
+var sheisgracielou = L.marker([33.177680087663084, -117.36460818605713], {
+	title: 'sheisgracielou',
+	label: 'sheisgracielou',
+	labelOptions: {
+	noHide: false
+	}
+}).addTo(map);
+
 
 
 var showNameYesNo = 0;
@@ -782,6 +790,7 @@ function showNames() {
 	secondPCH.bindTooltip('2ND & PCH', { permanent: true, direction: 'bottom', offset: [-15, 46] });
 	creekside.bindTooltip('The Creekside', { permanent: true, direction: 'top', offset: [-15, -11] });
 	theBarn.bindTooltip('The Barn', { permanent: true, direction: 'bottom', offset: [-16, 25] });
+	sheisgracielou.bindTooltip('sheisgracielou', { permanent: true, direction: 'bottom', offset: [-15, 66] });
 
 	showNameYesNo = 1;
 	
@@ -854,6 +863,7 @@ function showNames() {
 	secondPCH.unbindTooltip();
 	creekside.unbindTooltip();
 	theBarn.unbindTooltip();
+	sheisgracielou.unbindTooltip();
 	
 	showNameYesNo = 0;
 	
@@ -877,7 +887,7 @@ var showHideAll = 1;
 
 canyon.bindPopup("<span class='venuePopupTitle'>The Canyon, Agoura Hills</b></span><br>Every Wednesday</b><br><b> 7:00pm - 12:30/1am.</br><b>Borderline Bar</b><br><span class='card-tag'>18+</span>&nbsp<span class='card-tag'>College Night</span><br><br><a target='_blank' href='https://goo.gl/maps/WdHuusJ1DmEngWGT9'>Google Maps</a><a style='color: black;'>&nbsp|&nbsp</a><a target='_blank' href='https://www.instagram.com/borderlinebar/'>Instagram</a>").addTo(all);
 davenbusters.bindPopup("<span class='venuePopupTitle'>Dave & Buster's, Thousand Oaks</b></span><br>Every Thursday</b><br><b> 7:00pm - 10:00pm.</br><b>Janice Carnahan</b><br><span class='card-tag'>All Ages</span>&nbsp<span class='card-tag'>Free</span><br><br><a target='_blank' href='https://goo.gl/maps/WMdnULtKFuDJFf296'>Google Maps</a><a style='color: black;'>&nbsp|&nbsp</a><a target='_blank' href='https://www.instagram.com/dancinjan89/'>Instagram</a>").addTo(all);
-tarantulahill.bindPopup("<span class='venuePopupTitle'>Tarantula Hill Brewing Co., Thousand Oaks</b></span><br>Once a Month on Saturdays</b><br><b> 6:00pm - 12:00/1am.</br><b>Borderline Bar</b><br><span class='card-tag'>21+</span>&nbsp<span class='card-tag'>Outdoor Event</span><br><br><a target='_blank' href='https://maps.app.goo.gl/31fAgQSM9AJauomv6'>Google Maps</a><a style='color: black;'>&nbsp|&nbsp</a><a target='_blank' href='https://www.instagram.com/borderlinebar/'>Instagram</a>").addTo(all);
+tarantulahill.bindPopup("<span class='venuePopupTitle'>Tarantula Hill Brewing Co., Thousand Oaks</b></span><br>Once a Month on Saturdays,</b><br><a href='https://www.instagram.com/borderlinebar/' target='_blank'>Click for Schedule</a><br><b> 6:00pm - 12:00/1am.</br><b>Borderline Bar</b><br><span class='card-tag'>21+</span>&nbsp<span class='card-tag'>Outdoor Event</span><br><br><a target='_blank' href='https://maps.app.goo.gl/31fAgQSM9AJauomv6'>Google Maps</a><a style='color: black;'>&nbsp|&nbsp</a><a target='_blank' href='https://www.instagram.com/borderlinebar/'>Instagram</a>").addTo(all);
 thePaddock.bindPopup("<span class='venuePopupTitle'>The Paddock, Thousand Oaks</b></span><br>Every Other Friday,</b><br><a href='https://www.instagram.com/thepaddock805/' target='_blank'>Click for Schedule</a><br><b> 7:00pm - 12:00am.</br><b>Oaks Local</b><br><span class='card-tag'>All Ages</span>&nbsp<span class='card-tag'>Free</span><br><br><a target='_blank' href='https://maps.app.goo.gl/ksKzaUkx9HhpegcSA'>Google Maps</a><a style='color: black;'>&nbsp|&nbsp</a><a target='_blank' href='https://www.instagram.com/thepaddock805/'>Instagram</a>").addTo(all);
 marker7.bindPopup("<span class='venuePopupTitle'>E & D Hat Co., Santa Paula</b></span><br>Saturdays About Once Every Few Months,</b><br><a target='_blank' href='https://www.instagram.com/e_and_d_hat_co/'>Click for Schedule</a><br><b> Times Vary Per Day By Event</br><b>Varied</b><br><br><a target='_blank' href='https://maps.app.goo.gl/5kQnippSpxKibQfu7'>Google Maps</a><a style='color: black;'>&nbsp|&nbsp</a><a target='_blank' href='https://www.instagram.com/e_and_d_hat_co/'>Instagram</a>").addTo(all);
 cowboyPalace.bindPopup("<span class='venuePopupTitle'>The Cowboy Palace Saloon, Chatsworth</b></span><br>Every Wednesday-Sunday</b><br><b> Often starts at 4:30pm or 6:00pm/7:00pm.<a target='_blank' href='https://thecowboypalacesaloon.com/'><br>Click for Schedule</a></b></br><b>Cowboy Palace</b><br><span class='card-tag'>21+</span>&nbsp<span class='card-tag'>Live Music & DJ</span><br><br><a target='_blank' href='https://maps.app.goo.gl/69NiXnSVz59GiE7x9'>Google Maps</a><a style='color: black;'>&nbsp|&nbsp</a><a target='_blank' href='https://www.instagram.com/cowboypalacesaloon/'>Instagram</a>").addTo(all);
@@ -940,7 +950,7 @@ theParamount.bindPopup("<span class='venuePopupTitle'>The Paramount,<br>Los Ange
 secondPCH.bindPopup("<span class='venuePopupTitle'>2ND & PCH, Long Beach</b></span><br>Every 2nd Wednesday</b><br><b>6:00pm - 7:30pm.</br><b>DB Dance Fitness</b><br><span class='card-tag'>All Ages</span>&nbsp<span class='card-tag'>Outdoors</span><br><span class='card-tag'>Beginner Friendly</span><br><br><a target='_blank' href='https://maps.app.goo.gl/sAYtXUt3RE88QPZP7'>Google Maps</a><a style='color: black;'>&nbsp|&nbsp</a><a target='_blank' href='https://www.instagram.com/db.dancefitness/'>Instagram</a>").addTo(all);
 creekside.bindPopup("<span class='venuePopupTitle'>The Creekside, Santa Barbara</b></span><br>Every Wednesday</b><br><b>Starts at 7:30pm</br><b>Varied</b><br><span class='card-tag'>18+</span><br><br><a target='_blank' href='https://maps.app.goo.gl/4d9e6irWTwQQBmSf6'>Google Maps</a><a style='color: black;'>&nbsp|&nbsp</a><a target='_blank' href='https://www.instagram.com/thecreeksidesb/'>Instagram</a>").addTo(all);
 theBarn.bindPopup("<b><span class='venuePopupTitle'>The Barn, Santa Rosa Valley</b></span><br>Every Monday</b><br><b> 7:00pm - 9:00pm.</br><b>Francie Broughton</b><br><span class='card-tag'>All Ages</span><br><br><a target='_blank' href='https://maps.app.goo.gl/eFRhD1m6EMC8hxki9'>Google Maps</a><a style='color: black;'>&nbsp|&nbsp</a><a target='_blank' href='https://www.facebook.com/francie.broughton'>Facebook</a>").addTo(all);
-
+sheisgracielou.bindPopup("<span class='venuePopupTitle'>sheisgracielou, Oceanside</b></span><br>On Fridays,</b><br><a target='_blank' href='https://www.instagram.com/sheisgracielou/'>Click for Schedule</a><br><b>6:00pm - 9:00pm.</br><b>Varied</b><br><span class='card-tag'>All Ages</span>&nbsp<span class='card-tag'>Free</span><br><br><a target='_blank' href='https://maps.app.goo.gl/ThmFw52kqRASecqM8'>Google Maps</a><a style='color: black;'>&nbsp|&nbsp</a><a target='_blank' href='https://www.instagram.com/sheisgracielou/'>Instagram</a>").addTo(all);
 
 var currentZoom = 12;
 
@@ -1466,6 +1476,14 @@ creekside.on('click', function(e){
 });
 
 theBarn.on('click', function(e){
+	if (currentZoom < 12)
+    	map.setView(e.target.getLatLng(), markerZoomLevel);
+	else  if (currentZoom == 12 || currentZoom == 13)
+		map.setView(e.target.getLatLng());
+
+});
+
+sheisgracielou.on('click', function(e){
 	if (currentZoom < 12)
     	map.setView(e.target.getLatLng(), markerZoomLevel);
 	else  if (currentZoom == 12 || currentZoom == 13)

@@ -719,6 +719,14 @@ var sheisgracielou = L.marker([33.177680087663084, -117.36460818605713], {
 	}
 }).addTo(map);
 
+var vaqueroYMar = L.marker([34.2784087,-119.2941012,77], {
+	title: 'Vaquero Y Mar',
+	label: 'Vaquero Y Mar',
+	labelOptions: {
+	noHide: false
+	}
+}).addTo(map);
+
 
 
 var showNameYesNo = 0;
@@ -791,6 +799,8 @@ function showNames() {
 	creekside.bindTooltip('The Creekside', { permanent: true, direction: 'top', offset: [-15, -11] });
 	theBarn.bindTooltip('The Barn', { permanent: true, direction: 'bottom', offset: [-16, 25] });
 	sheisgracielou.bindTooltip('sheisgracielou', { permanent: true, direction: 'bottom', offset: [-15, 66] });
+	vaqueroYMar.bindTooltip('Vaquero Y Mar', { permanent: true, direction: 'bottom', offset: [-16, 25] });
+	
 
 	showNameYesNo = 1;
 	
@@ -864,6 +874,7 @@ function showNames() {
 	creekside.unbindTooltip();
 	theBarn.unbindTooltip();
 	sheisgracielou.unbindTooltip();
+	vaqueroYMar.unbindTooltip();
 	
 	showNameYesNo = 0;
 	
@@ -949,8 +960,10 @@ losGlobos.bindPopup("<span class='venuePopupTitle'>Los Globos, Los Angeles</b></
 theParamount.bindPopup("<span class='venuePopupTitle'>The Paramount,<br>Los Angeles</b></span><br>Every Thursday</b><br><b>8:00pm - 12:00am.</br><b>Stud Country</b><br><span class='card-tag'>21+</span>&nbsp<span class='card-tag'>Queer Line Dancing</span><br><br><a target='_blank' href='https://maps.app.goo.gl/saKX7QZg4dZXEjM98'>Google Maps</a><a style='color: black;'>&nbsp|&nbsp</a><a target='_blank' href='https://www.instagram.com/stud.country/'>Instagram</a>").addTo(all);
 secondPCH.bindPopup("<span class='venuePopupTitle'>2ND & PCH, Long Beach</b></span><br>Every 2nd Wednesday</b><br><b>6:00pm - 7:30pm.</br><b>DB Dance Fitness</b><br><span class='card-tag'>All Ages</span>&nbsp<span class='card-tag'>Outdoors</span><br><span class='card-tag'>Beginner Friendly</span><br><br><a target='_blank' href='https://maps.app.goo.gl/sAYtXUt3RE88QPZP7'>Google Maps</a><a style='color: black;'>&nbsp|&nbsp</a><a target='_blank' href='https://www.instagram.com/db.dancefitness/'>Instagram</a>").addTo(all);
 creekside.bindPopup("<span class='venuePopupTitle'>The Creekside, Santa Barbara</b></span><br>Every Wednesday</b><br><b>Starts at 7:30pm</br><b>Varied</b><br><span class='card-tag'>18+</span><br><br><a target='_blank' href='https://maps.app.goo.gl/4d9e6irWTwQQBmSf6'>Google Maps</a><a style='color: black;'>&nbsp|&nbsp</a><a target='_blank' href='https://www.instagram.com/thecreeksidesb/'>Instagram</a>").addTo(all);
-theBarn.bindPopup("<b><span class='venuePopupTitle'>The Barn, Santa Rosa Valley</b></span><br>Every Monday</b><br><b> 7:00pm - 9:00pm.</br><b>Francie Broughton</b><br><span class='card-tag'>All Ages</span><br><br><a target='_blank' href='https://maps.app.goo.gl/eFRhD1m6EMC8hxki9'>Google Maps</a><a style='color: black;'>&nbsp|&nbsp</a><a target='_blank' href='https://www.facebook.com/francie.broughton'>Facebook</a>").addTo(all);
+theBarn.bindPopup("<span class='venuePopupTitle'>The Barn, Santa Rosa Valley</b></span><br>Every Monday</b><br><b> 7:00pm - 9:00pm.</br><b>Francie Broughton</b><br><span class='card-tag'>All Ages</span><br><br><a target='_blank' href='https://maps.app.goo.gl/eFRhD1m6EMC8hxki9'>Google Maps</a><a style='color: black;'>&nbsp|&nbsp</a><a target='_blank' href='https://www.facebook.com/francie.broughton'>Facebook</a>").addTo(all);
 sheisgracielou.bindPopup("<span class='venuePopupTitle'>sheisgracielou, Oceanside</b></span><br>On Fridays,</b><br><a target='_blank' href='https://www.instagram.com/sheisgracielou/'>Click for Schedule</a><br><b>6:00pm - 9:00pm.</br><b>Varied</b><br><span class='card-tag'>All Ages</span>&nbsp<span class='card-tag'>Free</span><br><br><a target='_blank' href='https://maps.app.goo.gl/ThmFw52kqRASecqM8'>Google Maps</a><a style='color: black;'>&nbsp|&nbsp</a><a target='_blank' href='https://www.instagram.com/sheisgracielou/'>Instagram</a>").addTo(all);
+vaqueroYMar.bindPopup("<span class='venuePopupTitle'>Vaquero Y Mar, Ventura</b></span><br>Saturdays,</b><br><a target='_blank' href='https://www.instagram.com/sbeventhorizon/'>Click for Schedule</a><br><b> 7:00pm - Closing.</br><b>SB Event Horizon</b><br><span class='card-tag'>All Ages</span><br><br><a target='_blank' href='https://maps.app.goo.gl/GbQJym6p3WtpmF757'>Google Maps</a><a style='color: black;'>&nbsp|&nbsp</a><a target='_blank' href='https://www.instagram.com/sbeventhorizon/'>Instagram</a>").addTo(all);
+
 
 var currentZoom = 12;
 
@@ -1484,6 +1497,14 @@ theBarn.on('click', function(e){
 });
 
 sheisgracielou.on('click', function(e){
+	if (currentZoom < 12)
+    	map.setView(e.target.getLatLng(), markerZoomLevel);
+	else  if (currentZoom == 12 || currentZoom == 13)
+		map.setView(e.target.getLatLng());
+
+});
+
+vaqueroYMar.on('click', function(e){
 	if (currentZoom < 12)
     	map.setView(e.target.getLatLng(), markerZoomLevel);
 	else  if (currentZoom == 12 || currentZoom == 13)

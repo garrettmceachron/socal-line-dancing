@@ -727,6 +727,24 @@ var vaqueroYMar = L.marker([34.2784087,-119.2941012,77], {
 	}
 }).addTo(map);
 
+var shootersBarHemet = L.marker([33.74703803895462, -116.97141418523856], {
+	title: 'Shooters Bar',
+	label: 'Shooters Bar',
+	labelOptions: {
+	noHide: false
+	}
+}).addTo(map);
+
+var tahquitzPines = L.marker([33.75002165032664, -116.70276797857571], {
+	title: 'Tahquitz Pines',
+	label: 'Tahquitz Pines',
+	labelOptions: {
+	noHide: false
+	}
+}).addTo(map);
+
+
+
 
 
 var showNameYesNo = 0;
@@ -800,8 +818,9 @@ function showNames() {
 	theBarn.bindTooltip('The Barn', { permanent: true, direction: 'bottom', offset: [-16, 25] });
 	sheisgracielou.bindTooltip('sheisgracielou', { permanent: true, direction: 'bottom', offset: [-15, 66] });
 	vaqueroYMar.bindTooltip('Vaquero Y Mar', { permanent: true, direction: 'bottom', offset: [-16, 25] });
+	shootersBarHemet.bindTooltip('Shooters Bar', { permanent: true, direction: 'bottom', offset: [-15, 26] });
+    tahquitzPines.bindTooltip('Tahquitz Pines', { permanent: true, direction: 'bottom', offset: [-15, 26] });
 	
-
 	showNameYesNo = 1;
 	
 	return;
@@ -875,6 +894,8 @@ function showNames() {
 	theBarn.unbindTooltip();
 	sheisgracielou.unbindTooltip();
 	vaqueroYMar.unbindTooltip();
+	shootersBarHemet.unbindTooltip();
+	tahquitzPines.unbindTooltip();
 	
 	showNameYesNo = 0;
 	
@@ -963,6 +984,8 @@ creekside.bindPopup("<span class='venuePopupTitle'>The Creekside, Santa Barbara<
 theBarn.bindPopup("<span class='venuePopupTitle'>The Barn, Santa Rosa Valley</b></span><br>Every Monday</b><br><b> 7:00pm - 9:00pm.</br><b>Francie Broughton</b><br><span class='card-tag'>All Ages</span><br><br><a target='_blank' href='https://maps.app.goo.gl/eFRhD1m6EMC8hxki9'>Google Maps</a><a style='color: black;'>&nbsp|&nbsp</a><a target='_blank' href='https://www.facebook.com/francie.broughton'>Facebook</a>").addTo(all);
 sheisgracielou.bindPopup("<span class='venuePopupTitle'>sheisgracielou, Oceanside</b></span><br>On Fridays,</b><br><a target='_blank' href='https://www.instagram.com/sheisgracielou/'>Click for Schedule</a><br><b>6:00pm - 9:00pm.</br><b>Varied</b><br><span class='card-tag'>All Ages</span>&nbsp<span class='card-tag'>Free</span><br><br><a target='_blank' href='https://maps.app.goo.gl/ThmFw52kqRASecqM8'>Google Maps</a><a style='color: black;'>&nbsp|&nbsp</a><a target='_blank' href='https://www.instagram.com/sheisgracielou/'>Instagram</a>").addTo(all);
 vaqueroYMar.bindPopup("<span class='venuePopupTitle'>Vaquero Y Mar, Ventura</b></span><br>Saturdays,</b><br><a target='_blank' href='https://www.instagram.com/sbeventhorizon/'>Click for Schedule</a><br><b> 7:00pm - Closing.</br><b>SB Event Horizon</b><br><span class='card-tag'>All Ages</span><br><br><a target='_blank' href='https://maps.app.goo.gl/GbQJym6p3WtpmF757'>Google Maps</a><a style='color: black;'>&nbsp|&nbsp</a><a target='_blank' href='https://www.instagram.com/sbeventhorizon/'>Instagram</a>").addTo(all);
+shootersBarHemet.bindPopup("<span class='venuePopupTitle'>Shooters Bar, Hemet</b></span><br>Every 1st and 3rd Tuesday,</b><br><a target='_blank' href='https://www.instagram.com/hemetlinedancing/'>Click for Schedule</a><br><b>5:00pm - 10:00pm.</br><b>Hemet Line Dancing</b><br><span class='card-tag'>All Ages</span>&nbsp<span class='card-tag'>Free</span><br><br><a target='_blank' href='https://maps.app.goo.gl/JZzGbiDraATMeFi88'>Google Maps</a><a style='color: black;'>&nbsp|&nbsp</a><a target='_blank' href='https://www.instagram.com/hemetlinedancing/'>Instagram</a>").addTo(all);
+tahquitzPines.bindPopup("<span class='venuePopupTitle'>Tahquitz Pines, Idyillwild</b></span><br>Every 2nd and 4th Tuesday,</b><br><b>6:00pm - 8:00pm.</br><b>Tahquitz Pines Line Dancing</b><br><span class='card-tag'>All Ages</span>&nbsp<span class='card-tag'>Free</span><br><span class='card-tag'>Beginner Friendly</span><br><br><a target='_blank' href='https://maps.app.goo.gl/iNfhw29DEnzUMPS68'>Google Maps</a><a style='color: black;'>&nbsp|&nbsp</a><a target='_blank' href='https://www.facebook.com/groups/574660631825190/'>Facebook</a>").addTo(all);
 
 
 var currentZoom = 12;
@@ -1505,6 +1528,22 @@ sheisgracielou.on('click', function(e){
 });
 
 vaqueroYMar.on('click', function(e){
+	if (currentZoom < 12)
+    	map.setView(e.target.getLatLng(), markerZoomLevel);
+	else  if (currentZoom == 12 || currentZoom == 13)
+		map.setView(e.target.getLatLng());
+
+});
+
+shootersBarHemet.on('click', function(e){
+	if (currentZoom < 12)
+    	map.setView(e.target.getLatLng(), markerZoomLevel);
+	else  if (currentZoom == 12 || currentZoom == 13)
+		map.setView(e.target.getLatLng());
+
+});
+
+tahquitzPines.on('click', function(e){
 	if (currentZoom < 12)
     	map.setView(e.target.getLatLng(), markerZoomLevel);
 	else  if (currentZoom == 12 || currentZoom == 13)

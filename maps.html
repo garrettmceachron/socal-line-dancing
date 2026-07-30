@@ -751,6 +751,14 @@ var tavern101 = L.marker([34.14300908420534, -118.74697557776523], {
 	}
 }).addTo(map);
 
+var crawfordsSocial = L.marker([34.15238690584648, -118.82822144659464], {
+	title: 'Crawfords Social',
+	label: 'Crawfords Social',
+	labelOptions: {
+	noHide: false
+	}
+}).addTo(map);
+
 
 
 
@@ -829,8 +837,9 @@ function showNames() {
 	shootersBarHemet.bindTooltip('Shooters Bar', { permanent: true, direction: 'bottom', offset: [-15, 26] });
     tahquitzPines.bindTooltip('Tahquitz Pines', { permanent: true, direction: 'bottom', offset: [-15, 26] });
 	tavern101.bindTooltip('Tavern 101', { permanent: true, direction: 'bottom', offset: [-15, 66] });
+	crawfordsSocial.bindTooltip('Crawfords Social', { permanent: true, direction: 'bottom', offset: [-15, 26] });
 	
-	
+
 	showNameYesNo = 1;
 	
 	return;
@@ -907,6 +916,7 @@ function showNames() {
 	shootersBarHemet.unbindTooltip();
 	tahquitzPines.unbindTooltip();
 	tavern101.unbindTooltip();
+	crawfordsSocial.unbindTooltip();
 	
 	showNameYesNo = 0;
 	
@@ -998,7 +1008,7 @@ vaqueroYMar.bindPopup("<span class='venuePopupTitle'>Vaquero Y Mar, Ventura</b><
 shootersBarHemet.bindPopup("<span class='venuePopupTitle'>Shooters Bar, Hemet</b></span><br>Every 1st and 3rd Tuesday,</b><br><a target='_blank' href='https://www.instagram.com/hemetlinedancing/'>Click for Schedule</a><br><b>5:00pm - 10:00pm.</br><b>Hemet Line Dancing</b><br><span class='card-tag'>All Ages</span>&nbsp<span class='card-tag'>Free</span><br><br><a target='_blank' href='https://maps.app.goo.gl/JZzGbiDraATMeFi88'>Google Maps</a><a style='color: black;'>&nbsp|&nbsp</a><a target='_blank' href='https://www.instagram.com/hemetlinedancing/'>Instagram</a>").addTo(all);
 tahquitzPines.bindPopup("<span class='venuePopupTitle'>Tahquitz Pines, Idyillwild</b></span><br>Every 2nd and 4th Tuesday,</b><br><b>6:00pm - 8:00pm.</br><b>Tahquitz Pines Line Dancing</b><br><span class='card-tag'>All Ages</span>&nbsp<span class='card-tag'>Free</span><br><span class='card-tag'>Beginner Friendly</span><br><br><a target='_blank' href='https://maps.app.goo.gl/iNfhw29DEnzUMPS68'>Google Maps</a><a style='color: black;'>&nbsp|&nbsp</a><a target='_blank' href='https://www.facebook.com/groups/574660631825190/'>Facebook</a>").addTo(all);
 tavern101.bindPopup("<span class='venuePopupTitle'>Tavern 101, Agoura Hills</b></span><br>Every Tuesday starting 8/11</b><br><b> 6:00pm - 11:00pm.</br><b>DJ Xenia</b><br><span class='card-tag'>All Ages</span>&nbsp<span class='card-tag'>Indoors & Outdoors</span><br><br><a target='_blank' href='https://maps.app.goo.gl/MJhQsFfbcwVD8KZb8'>Google Maps</a><a style='color: black;'>&nbsp|&nbsp</a><a target='_blank' href='https://www.instagram.com/xenyeehaw/'>Instagram</a>").addTo(all);
-
+crawfordsSocial.bindPopup("<span class='venuePopupTitle'>Crawfords Social, Westlake Village</b></span><br>Every 6 Weeks on Fridays starting 8/28/26</b><br><a target='_blank' href='https://www.instagram.com/xenyeehaw/'>Click for Schedule</a><br><b>8:00pm.</br><b>DJ Xenia</b><br><span class='card-tag'>All Ages</span>&nbsp<span class='card-tag'>Free</span><br><br><a target='_blank' href='https://maps.app.goo.gl/5JA5MWf1j5sGx9Rk6'>Google Maps</a><a style='color: black;'>&nbsp|&nbsp</a><a target='_blank' href='https://www.instagram.com/xenyeehaw/'>Instagram</a>").addTo(all);
 
 
 var currentZoom = 12;
@@ -1565,6 +1575,14 @@ tahquitzPines.on('click', function(e){
 });
 
 tavern101.on('click', function(e){
+	if (currentZoom < 12)
+    	map.setView(e.target.getLatLng(), markerZoomLevel);
+	else  if (currentZoom == 12 || currentZoom == 13)
+		map.setView(e.target.getLatLng());
+
+});
+
+crawfordsSocial.on('click', function(e){
 	if (currentZoom < 12)
     	map.setView(e.target.getLatLng(), markerZoomLevel);
 	else  if (currentZoom == 12 || currentZoom == 13)

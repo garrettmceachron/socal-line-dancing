@@ -759,6 +759,13 @@ var crawfordsSocial = L.marker([34.15238690584648, -118.82822144659464], {
 	}
 }).addTo(map);
 
+var hangar24Riverside = L.marker([33.956571771798686, -117.33170367481638], {
+	title: 'Hangar 24',
+	label: 'Hangar 24',
+	labelOptions: {
+	noHide: false
+	}
+}).addTo(map);
 
 
 
@@ -838,6 +845,7 @@ function showNames() {
     tahquitzPines.bindTooltip('Tahquitz Pines', { permanent: true, direction: 'bottom', offset: [-15, 26] });
 	tavern101.bindTooltip('Tavern 101', { permanent: true, direction: 'bottom', offset: [-15, 66] });
 	crawfordsSocial.bindTooltip('Crawfords Social', { permanent: true, direction: 'bottom', offset: [-15, 26] });
+	hangar24Riverside.bindTooltip('Hangar 24', { permanent: true, direction: 'bottom', offset: [-15, 26] });
 	
 
 	showNameYesNo = 1;
@@ -917,6 +925,7 @@ function showNames() {
 	tahquitzPines.unbindTooltip();
 	tavern101.unbindTooltip();
 	crawfordsSocial.unbindTooltip();
+	hangar24Riverside.unbindTooltip();
 	
 	showNameYesNo = 0;
 	
@@ -992,7 +1001,7 @@ precinct.bindPopup("<span class='venuePopupTitle'>Precinct, Los Angeles</b></spa
 whiskeyRepublic.bindPopup("<span class='venuePopupTitle'>Whiskey Republic, Redlands</b></span><br>Most Wednesdays, Fridays and Sundays</b><br><a target='_blank' href='https://www.instagram.com/whiskeyrepublic.redlands/'>Click for Schedule</a><br><b> Times Vary Per Day.</br><b>Varied</b><br><span class='card-tag'>Age Checks Vary Per Day</span><br><br><a target='_blank' href='https://maps.app.goo.gl/cuDPPXcUCV3p3EEa6'>Google Maps</a><a style='color: black;'>&nbsp|&nbsp</a><a target='_blank' href='https://www.instagram.com/whiskeyrepublic.redlands/'>Instagram</a>").addTo(all);
 farmakisFarms.bindPopup("<span class='venuePopupTitle'>Farmakis Farms, San Juan Capistrano</b></span><br>Every Few Weeks on Fridays</b><br><a target='_blank' href='https://www.farmakisfarms.com/'>Click for Schedule</a><br><b> 7:00pm - 10:00pm.</br><b>Marie Kelly</b><br><span class='card-tag'>16+</span>&nbsp<span class='card-tag'>Outdoors</span><br><span class='card-tag'>Online Tickets Only</span><br><br><a target='_blank' href='https://maps.app.goo.gl/vHXvgPCuKrcpgCFx8'>Google Maps</a><a style='color: black;'>&nbsp|&nbsp</a><a target='_blank' href='https://www.instagram.com/farmakisfarms/'>Instagram</a>").addTo(all);
 projectBarley.bindPopup("<span class='venuePopupTitle'>Project Barley, Lomita</b></span><br>Every Friday</b><br><b> Starts at 7:00pm</br><b>Ghost Town Dancing</b><br><span class='card-tag'>All Ages</span><br><br><a target='_blank' href='https://maps.app.goo.gl/a4suXYN4CSNA3kRu9'>Google Maps</a><a style='color: black;'>&nbsp|&nbsp</a><a target='_blank' href='https://www.instagram.com/projectbarleybrewery/'>Instagram</a>").addTo(all);
-saddleSoreNorco.bindPopup("<span class='venuePopupTitle'>Saddle Sore, Norco</b></span><br>Every Monday and Thursday</b><br><a target='_blank' href='https://www.instagram.com/saddlesoresaloon/'>Click for Schedule</a><br><b> Times Vary Per Day</br><b>Saddle Sore</b><br><span class='card-tag'>All Ages</span>&nbsp<span class='card-tag'>Free</span><br><br><a target='_blank' href='https://maps.app.goo.gl/F7z5WhiM43s7aS8a9'>Google Maps</a><a style='color: black;'>&nbsp|&nbsp</a><a target='_blank' href='https://www.instagram.com/saddlesoresaloon/'>Instagram</a>").addTo(all);
+saddleSoreNorco.bindPopup("<span class='venuePopupTitle'>Saddle Sore, Norco</b></span><br>Every Monday and Thursday</b><br><a target='_blank' href='https://www.instagram.com/saddlesoresaloon/'>Click for Schedule</a><br><b> Mondays 6:30pm - 9:00pm,<br>Thursdays 7:00pm - 9:30pm.</br><b>Leslie</b><br><span class='card-tag'>All Ages</span>&nbsp<span class='card-tag'>Free</span><br><br><a target='_blank' href='https://maps.app.goo.gl/F7z5WhiM43s7aS8a9'>Google Maps</a><a style='color: black;'>&nbsp|&nbsp</a><a target='_blank' href='https://www.instagram.com/saddlesoresaloon/'>Instagram</a>").addTo(all);
 secondFloor.bindPopup("<span class='venuePopupTitle'>2nd Floor, Huntington Beach</b></span><br>Every Monday</b><br><b> 9:00pm - 12:00am</br><b>2nd Floor</b><br><span class='card-tag'>All Ages until 10pm</span><br><span class='card-tag'>21+ until 12am</span>&nbsp<span class='card-tag'>Free</span><br><br><a target='_blank' href='https://maps.app.goo.gl/YyWad6EGJUiyT7AW8'>Google Maps</a><a style='color: black;'>&nbsp|&nbsp</a><a target='_blank' href='https://www.instagram.com/2nd_floor_hb/'>Instagram</a>").addTo(all);
 mavericksClub.bindPopup("<span class='venuePopupTitle'>Mavericks Beach Club, San Diego</b></span><br>Every Thursday</b><br><b> 7:00pm - Close</br><b>Boot Scootin' Phillip & DJs</b><br><span class='card-tag'>21+</span>&nbsp<span class='card-tag'>Free</span><br><br><a target='_blank' href='https://maps.app.goo.gl/PPgBFZjA6neXKwaYA'>Google Maps</a><a style='color: black;'>&nbsp|&nbsp</a><a target='_blank' href='https://www.instagram.com/mavericksbeachclub/'>Instagram</a>").addTo(all);
 maverickSaloon.bindPopup("<span class='venuePopupTitle'>Maverick Saloon, Norco</b></span><br>Every Friday and Saturday</b><br><a target='_blank' href='https://www.instagram.com/themavericksaloon/'>Click for Schedule</a><br><b> Usually 6:00pm - 9:00pm</br><b>Varied</b><br><span class='card-tag'>21+</span>&nbsp<span class='card-tag'>Free</span><br><br><a target='_blank' href='https://maps.app.goo.gl/h2s69mTcELRP5vtm9'>Google Maps</a><a style='color: black;'>&nbsp|&nbsp</a><a target='_blank' href='https://www.instagram.com/themavericksaloon/'>Instagram</a>").addTo(all);
@@ -1009,6 +1018,7 @@ shootersBarHemet.bindPopup("<span class='venuePopupTitle'>Shooters Bar, Hemet</b
 tahquitzPines.bindPopup("<span class='venuePopupTitle'>Tahquitz Pines, Idyillwild</b></span><br>Every 2nd and 4th Tuesday,</b><br><b>6:00pm - 8:00pm.</br><b>Tahquitz Pines Line Dancing</b><br><span class='card-tag'>All Ages</span>&nbsp<span class='card-tag'>Free</span><br><span class='card-tag'>Beginner Friendly</span><br><br><a target='_blank' href='https://maps.app.goo.gl/iNfhw29DEnzUMPS68'>Google Maps</a><a style='color: black;'>&nbsp|&nbsp</a><a target='_blank' href='https://www.facebook.com/groups/574660631825190/'>Facebook</a>").addTo(all);
 tavern101.bindPopup("<span class='venuePopupTitle'>Tavern 101, Agoura Hills</b></span><br>Every Tuesday</b><br><b> 6:00pm - 11:00pm.</br><b>DJ Xenia</b><br><span class='card-tag'>All Ages</span>&nbsp<span class='card-tag'>Indoors & Outdoors</span><br><br><a target='_blank' href='https://maps.app.goo.gl/MJhQsFfbcwVD8KZb8'>Google Maps</a><a style='color: black;'>&nbsp|&nbsp</a><a target='_blank' href='https://www.instagram.com/xenyeehaw/'>Instagram</a>").addTo(all);
 crawfordsSocial.bindPopup("<span class='venuePopupTitle'>Crawfords Social, Westlake Village</b></span><br>Every 6 Weeks on Fridays starting 8/28/26</b><br><a target='_blank' href='https://www.instagram.com/xenyeehaw/'>Click for Schedule</a><br><b>8:00pm.</br><b>DJ Xenia</b><br><span class='card-tag'>All Ages</span>&nbsp<span class='card-tag'>Free</span><br><br><a target='_blank' href='https://maps.app.goo.gl/5JA5MWf1j5sGx9Rk6'>Google Maps</a><a style='color: black;'>&nbsp|&nbsp</a><a target='_blank' href='https://www.instagram.com/xenyeehaw/'>Instagram</a>").addTo(all);
+hangar24Riverside.bindPopup("<span class='venuePopupTitle'>Hangar 24, Riverside</b></span><br>Wednesdays, some Friday and Saturdays</b><br><a target='_blank' href='https://hangar24brewing.com/taprooms/riverside/'>Click for Schedule</a><br><b>8:30pm - 11:30pm</br><b>Leslie</b><br><span class='card-tag'>All Ages</span>&nbsp<span class='card-tag'>Free</span><br><br><a target='_blank' href='https://maps.app.goo.gl/nmsZgJZ2oAEmg5PZA'>Google Maps</a><a style='color: black;'>&nbsp|&nbsp</a><a target='_blank' href='https://www.instagram.com/hangar24riverside/'>Instagram</a>").addTo(all);
 
 
 var currentZoom = 12;
@@ -1583,6 +1593,14 @@ tavern101.on('click', function(e){
 });
 
 crawfordsSocial.on('click', function(e){
+	if (currentZoom < 12)
+    	map.setView(e.target.getLatLng(), markerZoomLevel);
+	else  if (currentZoom == 12 || currentZoom == 13)
+		map.setView(e.target.getLatLng());
+
+});
+
+hangar24Riverside.on('click', function(e){
 	if (currentZoom < 12)
     	map.setView(e.target.getLatLng(), markerZoomLevel);
 	else  if (currentZoom == 12 || currentZoom == 13)

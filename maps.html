@@ -309,15 +309,6 @@ var grillOnTheGreen = L.marker([34.2897912,-118.695882,898], {
 	}
 }).addTo(map);
 
-var corkAndBatterRoadhouse = L.marker([34.2838068,-118.76426,898], {
-	title: 'Cork & Batter Roadhouse',
-	label: 'Cork & Batter Roadhouse',
-	labelOptions: {
-	noHide: false
-	}
-}).addTo(map);
-
-
 var stampede = L.marker([33.49188020674805, -117.14724784845446], {
 	title: 'Stampede',
 	label: 'Stampede',
@@ -789,7 +780,6 @@ function showNames() {
 	danceCreations.bindTooltip('Dance Creations', { permanent: true, direction: 'bottom', offset: [0, 0] });
 	varsityClub.bindTooltip('Varsity Club', { permanent: true, direction: 'bottom', offset: [0, 5] });
 	grillOnTheGreen.bindTooltip('Grill On The Green', { permanent: true, direction: 'top', offset: [-16, -5] });
-	corkAndBatterRoadhouse.bindTooltip('Cork & Batter Roadhouse', { permanent: true, direction: 'top', offset: [-15, -15] });
 	stampede.bindTooltip('Stampede', { permanent: true, direction: 'bottom', offset: [-15, 26] });
 	westwoodCoast.bindTooltip('Westwood<br> Coast', { permanent: true, direction: 'bottom', offset: [-15, 26] });
 	theRanch.bindTooltip('The Ranch Saloon', { permanent: true, direction: 'bottom', offset: [-15, 26] });
@@ -869,7 +859,6 @@ function showNames() {
 	danceCreations.unbindTooltip();
 	varsityClub.unbindTooltip();
 	grillOnTheGreen.unbindTooltip();
-	corkAndBatterRoadhouse.unbindTooltip();
 	stampede.unbindTooltip();
 	westwoodCoast.unbindTooltip();
 	theRanch.unbindTooltip();
@@ -961,7 +950,6 @@ streyCellars.bindPopup("<span class='venuePopupTitle'>Strey Cellars, Oxnard</b><
 danceCreations.bindPopup("<span class='venuePopupTitle'>Dance Creations, Simi Valley</b></span><br>Every Third Sunday</b><br><b> 6:00pm - 9:00pm.</br><b>Roanna Battocchio</b><br><span class='card-tag'>All Ages</span>&nbsp<span class='card-tag'>Int. Advanced Only</span><br><br><a target='_blank' href='https://maps.app.goo.gl/5AZLpLqANhaoDE368'>Google Maps</a><a style='color: black;'>&nbsp|&nbsp</a><a target='_blank' href='https://www.instagram.com/roannabattocchio/'>Instagram</a>").addTo(all);
 varsityClub.bindPopup("<span class='venuePopupTitle'>Varsity Club, Ventura</b></span><br>Saturdays About Once Every Few Months,</b><br><a target='_blank' href='https://instagram.com/thevarsityclubatsis/'>Click for Schedule</a><br><b> 7:00pm - 11:00pm.</br><b>Ventucky Stompers</b><br><span class='card-tag'>All Ages</span><br><br><a target='_blank' href='https://maps.app.goo.gl/8LDE7vzYDr8XyuEMA'>Google Maps</a><a style='color: black;'>&nbsp|&nbsp</a><a target='_blank' href='https://instagram.com/thevarsityclubatsis/'>Instagram</a>").addTo(all);
 grillOnTheGreen.bindPopup("<span class='venuePopupTitle'>Grill On The Green, Simi Valley</b></span><br>Every Wednesday</b><br><b> 6:00pm - 8:00pm.</br><b>Varied</b><br><span class='card-tag'>All Ages</span>&nbsp<span class='card-tag'>Free</span><br><br><a target='_blank' href='https://maps.app.goo.gl/yh9NKW1QMrYNhxf99'>Google Maps</a><a style='color: black;'>&nbsp|&nbsp</a><a target='_blank' href='https://www.instagram.com/countryrosedancers/'>Instagram</a>").addTo(all);
-corkAndBatterRoadhouse.bindPopup("<span class='venuePopupTitle'>Cork & Batter Roadhouse, Simi Valley</b></span><br>Every Friday</b><br><b>10:00pm - 12:00am.</br><b>Chloe Kleiman</b><br><span class='card-tag'>All Ages</span>&nbsp<span class='card-tag'>$20 Entry</span><br><br><a target='_blank' href='https://maps.app.goo.gl/zzhUV62y2xnDz3ng8'>Google Maps</a><a style='color: black;'>&nbsp|&nbsp</a><a target='_blank' href='https://www.instagram.com/corkandbatter.roadhouse/'>Instagram</a>").addTo(all);
 conejoValleyLodge.bindPopup("<span class='venuePopupTitle'>Conejo Valley Lodge #807, Thousand Oaks</b></span><br><span id='ConejoMasonic'>Every Thursday</span><br><b> 6:00pm - 9:30pm.</br><b>Candy Sherwin</b><br><span class='card-tag'>All Ages</span><br><br><a target='_blank' href='https://maps.app.goo.gl/jfDkhAceYknuC4ca9'>Google Maps</a><a style='color: black;'>&nbsp|&nbsp</a><a target='_blank' href='https://www.instagram.com/candysherwin/'>Instagram</a>").addTo(all);
 stampede.bindPopup("<span class='venuePopupTitle'>Stampede, Temecula</b></span><br>Every Thursday through Saturday<br><b> Times Vary Per Day</br><a target='_blank' href='https://www.instagram.com/temeculastampede/'>Click for Schedule</a><br><b>Stampede</b><br><span class='card-tag'>18+ Thursday\'s</span><br><span class='card-tag'>21+ Fri/Sat.</span><br><span class='card-tag'>SoCal\'s Largest Line Dancing</span><br><br><a target='_blank' href='https://maps.app.goo.gl/SpzdoTPcz2dWWjL77'>Google Maps</a><a style='color: black;'>&nbsp|&nbsp</a><a target='_blank' href='https://www.instagram.com/temeculastampede/'>Instagram</a>").addTo(all);
 westwoodCoast.bindPopup("<span class='venuePopupTitle'>Westwood Coast, Costa Mesa</b></span><br>Every Tuesday and Thursday</b><br><b> Times Vary Per Day.</br><a target='_blank' href='https://www.westwoodworld.com/orange-county/line-dancing'>Click for Schedule</a><br><b>Westwood</b><br><span class='card-tag'>10+ Tuesday</span>&nbsp<span class='card-tag'>21+ Thursday</span><br><br><a target='_blank' href='https://maps.app.goo.gl/u7JRh5cQxBLJWFXW6'>Google Maps</a><a style='color: black;'>&nbsp|&nbsp</a><a target='_blank' href='https://www.instagram.com/westwoodcoastoc'>Instagram</a>").addTo(all);
@@ -1143,14 +1131,6 @@ grillOnTheGreen.on('click', function(e){
 	map.setView(e.target.getLatLng());
 
 }); 
-
-corkAndBatterRoadhouse.on('click', function(e){
-	if (currentZoom < 12)
-    map.setView(e.target.getLatLng(), markerZoomLevel);
-	else  if (currentZoom == 12 || currentZoom == 13)
-	map.setView(e.target.getLatLng());
-
-});
 
 stampede.on('click', function(e){
 	if (currentZoom < 12)

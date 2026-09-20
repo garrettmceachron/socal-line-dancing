@@ -75,11 +75,16 @@
 	 <button type="button" class="ShowNames" onclick="showNames();"> Toggle Venue Names </button>
 	 <br><br><br><br>
 	 <b class="homeParagraph" style="position: fixed; top: 50px;">Updated 2026</b>
-	 <div id="popupDiv" style="display: none; background-color: black; opacity: 0.6; width: 100%; height: 100%; position: fixed; top: 0px; z-index: 99999999999;"></div>
+	 <div id="popupDiv" style="display: none; background-color: black; opacity: 0.6; width: 100%; height: 100%; position: fixed; top: 0px; z-index: 99999999999;" onclick="document.getElementById('mediaPlayer').src='null'; document.getElementById('popupDiv').style.display = 'none';"></div>
 <dialog id="my-dialog" popover style="background-image: linear-gradient(to top, black, #211e24); color: white;">
-<p style="font-size: 22px; text-decoration: underline; font-weight: 650;">Dave & Busters<br>Thousand Oaks, CA</p>
-  <iframe id='mediaPlayer' height="550" class='imageDisplay' src="" allow="fullscreen" title="test"></iframe>
-  <br><button popovertarget="my-dialog" popovertargetaction="hide" style="background-color: black; border: 2px solid black; color: white; font-size: 20px;" onclick="document.getElementById('mediaPlayer').src='null'; document.getElementById('popupDiv').style.display = 'none';">Close</button>
+<p id="dialogTitle" style="font-size: 22px; text-decoration: underline; font-weight: 650; color: white;">Dave & Busters<br>Thousand Oaks, CA</p>
+  <iframe id='mediaPlayer' style="display: block;" height="550" class='imageDisplay' src="" allow="fullscreen" title="test"></iframe>
+  <span id="instagramVideoBlock" style="display: none; height: 550px; width: 300px; background-color: black;"><a id="instagramVideoLink" href="https://www.instagram.com/p/DVewvyHkjD1/" style="text-decoration: none;" target="_blank"><img src="images/Instagram_Glyph_Gradient.png" style="display: block; width: 100px; position: absolute; right: 100px; margin-top: 50%;"><br><br><span style="text-decoration: underline; position: relative; font-size: 21px; display: block; margin-top: 80%; font-weight: 600;" href="https://www.instagram.com/p/DU6kQy7Apv_/" target="_blank">View Video On Instagram</span><br></span>
+  </a><span id="cookiesPreview" style="display: none; height: 550px; width: 300px; background-color: black;"><br><img src="images/icon.png" style="display: block; width: 100px; position: absolute; right: 100px; margin-top: 50%;"><br><br><span style="position: relative; font-size: 20px; display: block; margin-top: 80%; font-weight: 600;"><button id="acceptCookiesPolicy">Accept cookie policy</button><br><a href="cookieprivacypolicy" target="_blank" style="font-size: 20px;">View cookie policy here</a></input><br><br>Or</span><br><a id="CookiesPreviewLink" href="" style="text-decoration: none;" target="_blank"><span style="text-decoration: underline; position: relative; font-size: 21px; display: block; font-weight: 600;" href="https://www.instagram.com/p/DU6kQy7Apv_/" target="_blank">View Video On TikTok</span><br></span>
+  </a><button popovertarget="my-dialog" popovertargetaction="hide" style="background-color: black; border: 4px solid black; color: white; font-size: 20px;" onclick="document.getElementById('mediaPlayer').src='null'; document.getElementById('popupDiv').style.display = 'none';">Close</button>
+  <span id="nextVideoButton" onclick="loadVideo('next');" style="position: fixed; right: 12px; top: 45%; color: white; z-index: 99999999999999; font-size: 36px; transform:scale(1.9,3); text-shadow: #000000 0px 0px 4px; cursor: pointer;">></span>
+  <span id="previousVideoButton" onclick="loadVideo('previous');" style="position: fixed; left: 12px; top: 45%; color: white; z-index: 99999999999999; font-size: 36px; transform:scale(1.9,3); text-shadow: #000000 0px 0px 4px; cursor: pointer;"><</span>
+    
 </dialog>
 	
 	
@@ -947,20 +952,171 @@ var showHideAll = 1;
 
 <script>
 
-canyon.bindPopup("<span class='venuePopupTitle'>The Canyon, Agoura Hills</b></span><br>Every Wednesday</b><br><b> 7:00pm - 12:30/1am.</br><b>Borderline Bar</b><br><span class='card-tag'>18+</span>&nbsp<span class='card-tag'>College Night</span><br><br><a target='_blank' href='https://goo.gl/maps/WdHuusJ1DmEngWGT9'>Google Maps</a><a style='color: black;'>&nbsp|&nbsp</a><a target='_blank' href='https://www.instagram.com/borderlinebar/'>Instagram</a>").addTo(all);
-davenbusters.bindPopup("<span class='venuePopupTitle'>Dave & Buster's, Thousand Oaks</b></span><br>Every Thursday</b><br><b> 7:00pm - 10:00pm.</br><b>Janice Carnahan</b><br><span class='card-tag'>All Ages</span>&nbsp<span class='card-tag'>Free</span><br><br><a target='_blank' href='https://goo.gl/maps/WMdnULtKFuDJFf296'>Google Maps</a><a style='color: black;'>&nbsp|&nbsp</a><a target='_blank' href='https://www.instagram.com/dancinjan89/'>Instagram</a>").addTo(all);
-tarantulahill.bindPopup("<span class='venuePopupTitle'>Tarantula Hill Brewing Co., Thousand Oaks</b></span><br>Once a Month on Saturdays,</b><br><a href='https://www.instagram.com/borderlinebar/' target='_blank'>Click for Schedule</a><br><b> 6:00pm - 12:00/1am.</br><b>Borderline Bar</b><br><span class='card-tag'>21+</span>&nbsp<span class='card-tag'>Outdoor Event</span><br><br><a target='_blank' href='https://maps.app.goo.gl/31fAgQSM9AJauomv6'>Google Maps</a><a style='color: black;'>&nbsp|&nbsp</a><a target='_blank' href='https://www.instagram.com/borderlinebar/'>Instagram</a>").addTo(all);
+		  var videoVenueNames = [
+		'venturamusichall',
+		'redengine',
+		'davenbusters',
+	    'tarantulahill',
+		'thearena',
+		'grillonthegreen',
+		'canyon',
+		'santaclaritasportscenter',
+		'desert5spot',
+		'montanas',
+	];
+
+	var videoVenueIndex = -1;
+function loadVideo(venueName) {
+		document.getElementById("popupDiv").style.display = "block";
+		document.getElementById("popupDiv").classList.add("fadeClass");
+		document.getElementById("instagramVideoBlock").style.display = "none";
+		document.getElementById("cookiesPreview").style.display = "none";
+		document.getElementById("mediaPlayer").style.display = "block";
+		
+		var videoPlayer = document.getElementById('mediaPlayer');
+		var videoCode = "";
+		var videoUsername = "";
+		
+		if (window.screen.width > 800)
+			document.getElementById("mediaPlayer").style.width = "750px";
+		else
+			document.getElementById("mediaPlayer").style.width = "300px";
+		
+		if (venueName == "next") {
+		   videoVenueIndex++;
+		   venueName = videoVenueNames[videoVenueIndex];
+		}
+		if (venueName == "previous") {
+		   videoVenueIndex--;
+		   venueName = videoVenueNames[videoVenueIndex];
+		}
+		
+		
+			if (venueName == "davenbusters") {
+					videoCode = "7546717310531276063";
+					document.getElementById('dialogTitle').innerHTML = "Dave & Busters<br>Thousand Oaks, CA";
+					videoUsername = "bootscootinbailey";
+				 }
+			if (venueName == "tarantulahill") {
+					videoCode = "7581044398255918350";
+					document.getElementById('dialogTitle').innerHTML = "Tarantula Hill<br>Thousand Oaks, CA";
+					videoUsername = "dancinwithaves22";
+				 }
+			if (venueName == "canyon") {
+					videoCode = "7528257736186940702";
+					document.getElementById('dialogTitle').innerHTML = "The Canyon<br>Agoura Hills, CA";
+					videoUsername = "mikeyonthefloor";
+				 }
+			if (venueName == "grillonthegreen") {
+					videoCode = "7662521124902702349";
+					document.getElementById('dialogTitle').innerHTML = "Grill On The Green<br>Simi Valley, CA";
+					videoUsername = "xenyeehaw";
+				}	 
+			if (venueName == "redengine") {
+					videoCode = "7587282773044514103";
+					document.getElementById('dialogTitle').innerHTML = "Red Engine Brewing Co.<br>Fillmore, CA";
+					videoUsername = "mikeyonthefloor";
+				 }
+			if (venueName == "venturamusichall") {
+					videoCode = "7677792857721179422";
+					document.getElementById('dialogTitle').innerHTML = "Ventura Music Hall<br>Ventura, CA";
+					videoUsername = "dancinwithaj";
+				 }
+			if (venueName == "santaclaritasportscenter") {
+					videoCode = "7601352791780592926";
+					document.getElementById('dialogTitle').innerHTML = "Santa Clarita Sports Center<br>Santa Clarita, CA<br>Video by <a href='https://www.tiktok.com/@katrinanichols0/video/7601352791780592926'>@katrinanichols0</a>";
+				}
+			if (venueName == "montanas") {
+					videoCode = "7661369695651613965";
+					document.getElementById('dialogTitle').innerHTML = "Montana's<br>San Dimas, CA";
+					videoUsername = "lx.palafox";
+				}
+			if (venueName == "desert5spot") {
+					videoCode = "7613551502803619103";
+					videoUsername = "sageisgroovy";
+					document.getElementById('dialogTitle').innerHTML = "Desert 5 Spot<br>Los Angeles, CA";
+				 }
+			if (venueName == "thearena") {
+					videoCode = "7685634342164417823";
+					document.getElementById('dialogTitle').innerHTML = "The Arena<br>Simi Valley, CA";
+					videoUsername = "linedancingwithhay"
+				}	
+
+		
+		if (videoVenueIndex != "-1") {
+			videoVenueIndex = videoVenueNames.indexOf(venueName);
+		}
+			
+		
+		
+		
+		if (videoVenueIndex <= 0) {
+			document.getElementById("previousVideoButton").style.opacity = "0.35";
+			document.getElementById("previousVideoButton").onclick = "";
+		}
+		else {
+			document.getElementById("previousVideoButton").style.opacity = "1";
+			document.getElementById("previousVideoButton").onclick = function() {loadVideo('previous');};
+		}
+		
+		if (videoVenueIndex >= videoVenueNames.length - 1) {
+			document.getElementById("nextVideoButton").style.opacity = "0.35";
+			document.getElementById("nextVideoButton").onclick = "";
+		}
+		else {
+			document.getElementById("nextVideoButton").style.opacity = "1";
+			document.getElementById("nextVideoButton").onclick = function() {loadVideo('next');};
+		}
+		
+		if (videoVenueIndex == null) {
+			document.getElementById("previousVideoButton").style.display = "none";
+			document.getElementById("nextVideoButton").style.display = "none";
+		}
+		else
+		{
+		 document.getElementById("previousVideoButton").style.display = "block";
+		 document.getElementById("nextVideoButton").style.display = "block";
+		}
+		   
+		   
+		if (localStorage.getItem("cookies") == 1) {
+			document.getElementById('mediaPlayer').src = "https://www.tiktok.com/player/v1/" + videoCode + "?&music_info=1&description=1";
+			}
+		else {
+				document.getElementById("instagramVideoLink").style.display = "none";
+				document.getElementById("mediaPlayer").style.display = "none";
+				document.getElementById("CookiesPreviewLink").href = "https://www.tiktok.com/@" + videoUsername + "/video/" + videoCode;
+				document.getElementById("cookiesPreview").style.display = "block";
+		}
+		
+		if (videoUsername != "")
+				document.getElementById('dialogTitle').innerHTML += "<br>Video by <a href='https://www.tiktok.com/@" + videoUsername + "/video/" + videoCode + "' target='_blank'>@" + videoUsername + "</a>";
+		
+		
+		document.getElementById("acceptCookiesPolicy").onclick = function(){localStorage.setItem("cookies", "1"); loadVideo(venueName);};
+	 }	
+
+canyon.bindPopup("<span class='venuePopupTitle'>The Canyon, Agoura Hills</b></span><br>Every Wednesday</b><br><b> 7:00pm - 12:30/1am.</br><b>Borderline Bar</b><br><span class='card-tag'>18+</span>&nbsp<span class='card-tag'>College Night</span><br><br><a target='_blank' href='https://goo.gl/maps/WdHuusJ1DmEngWGT9'>Google Maps</a><a style='color: black;'>&nbsp|&nbsp</a><a target='_blank' href='https://www.instagram.com/borderlinebar/'>Instagram</a>"
+	+ "<br><button popovertarget='my-dialog' class='videoButton' onclick='loadVideo(\"canyon\")'>Watch Videos</button>").addTo(all);
+davenbusters.bindPopup("<span class='venuePopupTitle'>Dave & Buster's, Thousand Oaks</b></span><br>Every Thursday</b><br><b> 7:00pm - 10:00pm.</br><b>Janice Carnahan</b><br><span class='card-tag'>All Ages</span>&nbsp<span class='card-tag'>Free</span><br><br><a target='_blank' href='https://goo.gl/maps/WMdnULtKFuDJFf296'>Google Maps</a><a style='color: black;'>&nbsp|&nbsp</a><a target='_blank' href='https://www.instagram.com/dancinjan89/'>Instagram</a>"
+	+ "<br><button popovertarget='my-dialog' class='videoButton' onclick='loadVideo(\"davenbusters\")'>Watch Videos</button>").addTo(all);
+tarantulahill.bindPopup("<span class='venuePopupTitle'>Tarantula Hill Brewing Co., Thousand Oaks</b></span><br>Once a Month on Saturdays,</b><br><a href='https://www.instagram.com/borderlinebar/' target='_blank'>Click for Schedule</a><br><b> 6:00pm - 12:00/1am.</br><b>Borderline Bar</b><br><span class='card-tag'>21+</span>&nbsp<span class='card-tag'>Outdoor Event</span><br><br><a target='_blank' href='https://maps.app.goo.gl/31fAgQSM9AJauomv6'>Google Maps</a><a style='color: black;'>&nbsp|&nbsp</a><a target='_blank' href='https://www.instagram.com/borderlinebar/'>Instagram</a>"
+	+ "<br><button popovertarget='my-dialog' class='videoButton' onclick='loadVideo(\"tarantulahill\")'>Watch Videos</button>").addTo(all);
 thePaddock.bindPopup("<span class='venuePopupTitle'>The Paddock, Thousand Oaks</b></span><br>Every Other Friday,</b><br><a href='https://www.instagram.com/thepaddock805/' target='_blank'>Click for Schedule</a><br><b> 7:00pm - 12:00am.</br><b>Oaks Local</b><br><span class='card-tag'>All Ages</span>&nbsp<span class='card-tag'>Free</span><br><br><a target='_blank' href='https://maps.app.goo.gl/ksKzaUkx9HhpegcSA'>Google Maps</a><a style='color: black;'>&nbsp|&nbsp</a><a target='_blank' href='https://www.instagram.com/thepaddock805/'>Instagram</a>").addTo(all);
 marker7.bindPopup("<span class='venuePopupTitle'>E & D Hat Co., Santa Paula</b></span><br>Saturdays About Once Every Few Months,</b><br><a target='_blank' href='https://www.instagram.com/e_and_d_hat_co/'>Click for Schedule</a><br><b> Times Vary Per Day By Event</br><b>Varied</b><br><br><a target='_blank' href='https://maps.app.goo.gl/5kQnippSpxKibQfu7'>Google Maps</a><a style='color: black;'>&nbsp|&nbsp</a><a target='_blank' href='https://www.instagram.com/e_and_d_hat_co/'>Instagram</a>").addTo(all);
 cowboyPalace.bindPopup("<span class='venuePopupTitle'>The Cowboy Palace Saloon, Chatsworth</b></span><br>Every Wednesday-Sunday</b><br><b> Often starts at 4:30pm or 6:00pm/7:00pm.<a target='_blank' href='https://thecowboypalacesaloon.com/'><br>Click for Schedule</a></b></br><b>Cowboy Palace</b><br><span class='card-tag'>21+</span>&nbsp<span class='card-tag'>Live Music & DJ</span><br><br><a target='_blank' href='https://maps.app.goo.gl/69NiXnSVz59GiE7x9'>Google Maps</a><a style='color: black;'>&nbsp|&nbsp</a><a target='_blank' href='https://www.instagram.com/cowboypalacesaloon/'>Instagram</a>").addTo(all);
-santaClaritaSportsCenter.bindPopup("<span class='venuePopupTitle'>Santa Clarita Sports Center, Santa Clarita</b></span><br>Every Thursday</b><br><b> 7:45pm - 12:00am.</br><b>Borderline Bar</b><br><span class='card-tag'>18+</span>&nbsp<span class='card-tag'>College Night</span><br><br><a target='_blank' href='https://maps.app.goo.gl/HKpDpbRWzV4cc8PD6'>Google Maps</a><a style='color: black;'>&nbsp|&nbsp</a><a target='_blank' href='https://www.instagram.com/borderlinesantaclarita/'>Instagram</a>").addTo(all);
-redEngine.bindPopup("<span class='venuePopupTitle'>Red Engine Brewing Company, Fillmore</b></span><br>Most Fridays</b><br><b> 7:00pm - 11:00pm.</br><b>Red Engine Brewing</b><br><span class='card-tag'>All Ages</span><br><br><a target='_blank' href='https://maps.app.goo.gl/9ALzWJRgu5z5Kjsu8'>Google Maps</a><a style='color: black;'>&nbsp|&nbsp</a><a target='_blank' href='https://www.instagram.com/redenginebrewing/'>Instagram</a>").addTo(all);
-venturaMusicHall.bindPopup("<span class='venuePopupTitle'>Ventura Music Hall, Ventura</b></span><br>Fridays or Saturdays About Once Every One to Two Months,</b><br><a target='_blank' href='https://www.venturamusichall.com/events'>Click for Schedule</a><br><b> 8:00pm - 12:00am.</br><b>Neon Moon Country Party</b><br><span class='card-tag'>18+</span><br><br><a target='_blank' href='https://maps.app.goo.gl/wgS5m9yUEXPNpNUE7'>Google Maps</a><a style='color: black;'>&nbsp|&nbsp</a><a target='_blank' href='https://www.instagram.com/neonmooncountryparty/'>Instagram</a>").addTo(all);
+santaClaritaSportsCenter.bindPopup("<span class='venuePopupTitle'>Santa Clarita Sports Center, Santa Clarita</b></span><br>Every Thursday</b><br><b> 7:45pm - 12:00am.</br><b>Borderline Bar</b><br><span class='card-tag'>18+</span>&nbsp<span class='card-tag'>College Night</span><br><br><a target='_blank' href='https://maps.app.goo.gl/HKpDpbRWzV4cc8PD6'>Google Maps</a><a style='color: black;'>&nbsp|&nbsp</a><a target='_blank' href='https://www.instagram.com/borderlinesantaclarita/'>Instagram</a>"
+	+ "<br><button popovertarget='my-dialog' class='videoButton' onclick='loadVideo(\"santaclaritasportscenter\")'>Watch Videos</button>").addTo(all);
+redEngine.bindPopup("<span class='venuePopupTitle'>Red Engine Brewing Company, Fillmore</b></span><br>Most Fridays</b><br><b> 7:00pm - 11:00pm.</br><b>Red Engine Brewing</b><br><span class='card-tag'>All Ages</span><br><br><a target='_blank' href='https://maps.app.goo.gl/9ALzWJRgu5z5Kjsu8'>Google Maps</a><a style='color: black;'>&nbsp|&nbsp</a><a target='_blank' href='https://www.instagram.com/redenginebrewing/'>Instagram</a>"
+	+ "<br><button popovertarget='my-dialog' class='videoButton' onclick='loadVideo(\"redengine\")'>Watch Videos</button>").addTo(all);
+venturaMusicHall.bindPopup("<span class='venuePopupTitle'>Ventura Music Hall, Ventura</b></span><br>Fridays or Saturdays About Once Every One to Two Months,</b><br><a target='_blank' href='https://www.venturamusichall.com/events'>Click for Schedule</a><br><b> 8:00pm - 12:00am.</br><b>Neon Moon Country Party</b><br><span class='card-tag'>18+</span><br><br><a target='_blank' href='https://maps.app.goo.gl/wgS5m9yUEXPNpNUE7'>Google Maps</a><a style='color: black;'>&nbsp|&nbsp</a><a target='_blank' href='https://www.instagram.com/neonmooncountryparty/'>Instagram</a>"
+	+ "<br><button popovertarget='my-dialog' class='videoButton' onclick='loadVideo(\"venturamusichall\")'>Watch Videos</button>").addTo(all);
 magnavinoCellars.bindPopup("<span class='venuePopupTitle'>Magnavino Cellars, Oxnard</b></span><br>Last Friday of Every Month,</b><br><a target='_blank' href='https://www.facebook.com/Magnavino'>Click for Schedule</a><br><b> 7:00pm - 10:00pm.</br><b>Varied (Older Live Country Style)</b><br><span class='card-tag'>Live Music (Older Country)</span><br><br><a target='_blank' href='https://maps.app.goo.gl/519NmCHVL3qZkRnz6'>Google Maps</a><a style='color: black;'>&nbsp|&nbsp</a><a target='_blank' href='https://www.instagram.com/magnavino_cellars/'>Instagram</a>").addTo(all);
 streyCellars.bindPopup("<span class='venuePopupTitle'>Strey Cellars, Oxnard</b></span><br>Once a Month on Sundays,</b><br><a target='_blank' href='https://www.streycellars.com/event-type-2/barfly/'>Click for Schedule</a><br><b> 2:00pm - 5:00pm.</br><b>Caught Red Handed (Older Live Country Style)</b><br><span class='card-tag'>Live Music (Older Country)</span><br><br><a target='_blank' href='https://maps.app.goo.gl/HgyKovkwrs9Ndfxr8'>Google Maps</a><a style='color: black;'>&nbsp|&nbsp</a><a target='_blank' href='https://www.instagram.com/streycellars/'>Instagram</a>").addTo(all);
 danceCreations.bindPopup("<span class='venuePopupTitle'>Dance Creations, Simi Valley</b></span><br>Every Third Sunday</b><br><b> 6:00pm - 9:00pm.</br><b>Roanna Battocchio</b><br><span class='card-tag'>All Ages</span>&nbsp<span class='card-tag'>Int. Advanced Only</span><br><br><a target='_blank' href='https://maps.app.goo.gl/5AZLpLqANhaoDE368'>Google Maps</a><a style='color: black;'>&nbsp|&nbsp</a><a target='_blank' href='https://www.instagram.com/roannabattocchio/'>Instagram</a>").addTo(all);
 varsityClub.bindPopup("<span class='venuePopupTitle'>Varsity Club, Ventura</b></span><br>Saturdays About Once Every Few Months,</b><br><a target='_blank' href='https://instagram.com/thevarsityclubatsis/'>Click for Schedule</a><br><b> Times Vary.</br><b>Ventucky Stompers</b><br><span class='card-tag'>All Ages</span><br><br><a target='_blank' href='https://maps.app.goo.gl/8LDE7vzYDr8XyuEMA'>Google Maps</a><a style='color: black;'>&nbsp|&nbsp</a><a target='_blank' href='https://instagram.com/thevarsityclubatsis/'>Instagram</a>").addTo(all);
-grillOnTheGreen.bindPopup("<span class='venuePopupTitle'>Grill On The Green, Simi Valley</b></span><br>Every Wednesday</b><br><b> 6:00pm - 8:00pm.</br><b>Varied</b><br><span class='card-tag'>All Ages</span>&nbsp<span class='card-tag'>Free</span><br><br><a target='_blank' href='https://maps.app.goo.gl/yh9NKW1QMrYNhxf99'>Google Maps</a><a style='color: black;'>&nbsp|&nbsp</a><a target='_blank' href='https://www.instagram.com/countryrosedancers/'>Instagram</a>").addTo(all);
+grillOnTheGreen.bindPopup("<span class='venuePopupTitle'>Grill On The Green, Simi Valley</b></span><br>Every Wednesday</b><br><b> 6:00pm - 8:00pm.</br><b>Varied</b><br><span class='card-tag'>All Ages</span>&nbsp<span class='card-tag'>Free</span><br><br><a target='_blank' href='https://maps.app.goo.gl/yh9NKW1QMrYNhxf99'>Google Maps</a><a style='color: black;'>&nbsp|&nbsp</a><a target='_blank' href='https://www.instagram.com/countryrosedancers/'>Instagram</a>"
+	+ "<br><button popovertarget='my-dialog' class='videoButton' onclick='loadVideo(\"grillonthegreen\")'>Watch Videos</button>").addTo(all);
 conejoValleyLodge.bindPopup("<span class='venuePopupTitle'>Conejo Valley Lodge #807, Thousand Oaks</b></span><br><span id='ConejoMasonic'>Every Thursday</span><br><b> 6:00pm - 9:30pm.</br><b>Candy Sherwin</b><br><span class='card-tag'>All Ages</span><br><br><a target='_blank' href='https://maps.app.goo.gl/jfDkhAceYknuC4ca9'>Google Maps</a><a style='color: black;'>&nbsp|&nbsp</a><a target='_blank' href='https://www.instagram.com/candysherwin/'>Instagram</a>").addTo(all);
 stampede.bindPopup("<span class='venuePopupTitle'>Stampede, Temecula</b></span><br>Every Thursday through Saturday<br><b> Times Vary Per Day</br><a target='_blank' href='https://www.instagram.com/temeculastampede/'>Click for Schedule</a><br><b>Stampede</b><br><span class='card-tag'>18+ Thursday\'s</span><br><span class='card-tag'>21+ Fri/Sat.</span><br><span class='card-tag'>SoCal\'s Largest Line Dancing</span><br><br><a target='_blank' href='https://maps.app.goo.gl/SpzdoTPcz2dWWjL77'>Google Maps</a><a style='color: black;'>&nbsp|&nbsp</a><a target='_blank' href='https://www.instagram.com/temeculastampede/'>Instagram</a>").addTo(all);
 westwoodCoast.bindPopup("<span class='venuePopupTitle'>Westwood Coast, Costa Mesa</b></span><br>Every Tuesday and Thursday</b><br><b> Times Vary Per Day.</br><a target='_blank' href='https://www.westwoodworld.com/orange-county/line-dancing'>Click for Schedule</a><br><b>Westwood</b><br><span class='card-tag'>10+ Tuesday</span>&nbsp<span class='card-tag'>21+ Thursday</span><br><br><a target='_blank' href='https://maps.app.goo.gl/u7JRh5cQxBLJWFXW6'>Google Maps</a><a style='color: black;'>&nbsp|&nbsp</a><a target='_blank' href='https://www.instagram.com/westwoodcoastoc'>Instagram</a>").addTo(all);
@@ -970,8 +1126,10 @@ inCahoots.bindPopup("<span class='venuePopupTitle'>In Cahoots, Fullerton</b></sp
 whiskey.bindPopup("<span class='venuePopupTitle'>Whiskey River, Norco</b></span><br>Every Tuesday through Sunday</b><br><a target='_blank' href='https://www.instagram.com/whiskeyriver_norco/'>Click for Schedule</a><br><b>Usually at 7:00pm, Times Vary.</br><b>Whiskey River</b><br><span class='card-tag'>ID Check Varies By Day</span><br><span class='card-tag'>Live Music Fri/Sat.</span><br><br><a target='_blank' href='https://maps.app.goo.gl/EetiYx8cX39pptNr9'>Google Maps</a><a style='color: black;'>&nbsp|&nbsp</a><a target='_blank' href='https://www.instagram.com/whiskeyriver_norco/'>Instagram</a>").addTo(all);
 rookiesSportsBar.bindPopup("<span class='venuePopupTitle'>Rookies Sports Bar, Oceanside</b></span><br>Every Friday</b><br><a target='_blank' href='https://www.instagram.com/kedroffscountry/'>Click for Schedule</a><br><b> Times Vary</br><b>Rookies Sports Bar</b><br><span class='card-tag'>All Ages</span><br><br><a target='_blank' href='https://maps.app.goo.gl/9LVAUAfPNNrRnZ487'>Google Maps</a><a style='color: black;'>&nbsp|&nbsp</a><a target='_blank' href='https://www.instagram.com/iloverookies/'>Instagram</a>").addTo(all);
 seaSaltHonkyTonk.bindPopup("<span class='venuePopupTitle'>Sea Salt Honky Tonk, Huntington Beach</b></span><br>Every Friday to Sunday in Summer 2026</b><br><b> Times Vary Per Day.</br><b>Sea Salt Honky Tonk</b><br><span class='card-tag'>All Ages</span>&nbsp<span class='card-tag'>Free</span><br><span class='card-tag'>Next To The Beach</span><br><br><a target='_blank' href='https://maps.app.goo.gl/mahLw5GSmtQDbWhS9'>Google Maps</a><a style='color: black;'>&nbsp|&nbsp</a><a target='_blank' href='https://www.instagram.com/seasalt_honkytonk_atthebeach/'>Instagram</a>").addTo(all);
-montanas.bindPopup("<span class='venuePopupTitle'>Montana\'s, San Dimas</b></span><br>Every Friday and Saturday</b><br><b> 6:00pm - 1:30am.</br><b>Montana\'s</b><br><span class='card-tag'>21+</span><br><br><a target='_blank' href='https://maps.app.goo.gl/enxEiUEzNRuZC9JT9'>Google Maps</a><a style='color: black;'>&nbsp|&nbsp</a><a target='_blank' href='https://www.instagram.com/montanascountrynightclub/'>Instagram</a>").addTo(all);
-desert5spot.bindPopup("<span class='venuePopupTitle'>Desert 5 Spot, Los Angeles</b></span><br>Most Wednesdays and Friday/Saturdays</b><br><a target='_blank' href='https://www.desertfivespot.com/la'>Click for Schedule</a><br><b> Times Vary Per Day.</br><b>Desert 5 Spot</b><br><span class='card-tag'>21+</span>&nbsp<span class='card-tag'>Free</span><br><span class='card-tag'>Rooftop Line Dancing</span><br><br><a target='_blank' href='https://maps.app.goo.gl/fcSMnDL8ZqDMWW3w7'>Google Maps</a><a style='color: black;'>&nbsp|&nbsp</a><a target='_blank' href='https://www.instagram.com/desertfivespotla/'>Instagram</a>").addTo(all);
+montanas.bindPopup("<span class='venuePopupTitle'>Montana\'s, San Dimas</b></span><br>Every Friday and Saturday</b><br><b> 6:00pm - 1:30am.</br><b>Montana\'s</b><br><span class='card-tag'>21+</span><br><br><a target='_blank' href='https://maps.app.goo.gl/enxEiUEzNRuZC9JT9'>Google Maps</a><a style='color: black;'>&nbsp|&nbsp</a><a target='_blank' href='https://www.instagram.com/montanascountrynightclub/'>Instagram</a>"
+	+ "<br><button popovertarget='my-dialog' class='videoButton' onclick='loadVideo(\"montanas\")'>Watch Videos</button>").addTo(all);
+desert5spot.bindPopup("<span class='venuePopupTitle'>Desert 5 Spot, Los Angeles</b></span><br>Wednesday, Friday and Saturdays</b><br><a target='_blank' href='https://www.desertfivespot.com/la'>Click for Schedule</a><br><b> Times Vary Per Day.</br><b>Desert 5 Spot</b><br><span class='card-tag'>21+</span>&nbsp<span class='card-tag'>Free</span>&nbsp<span class='card-tag'>Rooftop Dancing</span><br><br><a target='_blank' href='https://maps.app.goo.gl/fcSMnDL8ZqDMWW3w7'>Google Maps</a><a style='color: black;'>&nbsp|&nbsp</a><a target='_blank' href='https://www.instagram.com/desertfivespotla/'>Instagram</a>"
+	+ "<br><button popovertarget='my-dialog' class='videoButton' onclick='loadVideo(\"desert5spot\")'>Watch Videos</button>").addTo(all);
 eastwoodLa.bindPopup("<span class='venuePopupTitle'>Eastwood, Los Angeles</b></span><br>Certain Wednesdays, Fridays and Saturdays,</b><br><a target='_blank' href='https://www.instagram.com/eastwood.la/'>Click for Schedule</a><br><b> Times Vary Per Day.</br><b>Eastwood</b><br><span class='card-tag'>21+</span><br><br><a target='_blank' href='https://maps.app.goo.gl/HXt3oLkJQ4e9CcHW9'>Google Maps</a><a style='color: black;'>&nbsp|&nbsp</a><a target='_blank' href='https://www.instagram.com/eastwood.la/'>Instagram</a>").addTo(all);
 bigshotsBilliards.bindPopup("<span class='venuePopupTitle'>Bigshots Billiards, Lake Forest</b></span><br>Every Sunday, Wednesday and Thursday</b><br><a target='_blank' href='https://www.instagram.com/bigshotsbilliards/'>Click for Schedule</a><br><b> 8:00pm - 12:30am.</br><b>Bigshots Billiards</b><br><span class='card-tag'>18+</span><br><br><a target='_blank' href='https://maps.app.goo.gl/GNqFkAbSEfpqx5kE9'>Google Maps</a><a style='color: black;'>&nbsp|&nbsp</a><a target='_blank' href='https://www.instagram.com/bigshotsbilliards/'>Instagram</a>").addTo(all);
 momSaidYes.bindPopup("<span class='venuePopupTitle'>Mom Said Yes, Torrance</b></span><br>Every Thursday</b><br><b> 7:00pm - 11:30pm.</br><b>Mom Said Yes</b><br><span class='card-tag'>All Ages</span><br><br><a target='_blank' href='https://maps.app.goo.gl/x8UakW7dH5mg11Dy8'>Google Maps</a><a style='color: black;'>&nbsp|&nbsp</a><a target='_blank' href='https://www.instagram.com/momsaidyessouthbay/'>Instagram</a>").addTo(all);
@@ -1018,7 +1176,8 @@ tahquitzPines.bindPopup("<span class='venuePopupTitle'>Tahquitz Pines, Idyillwil
 luckyStrikeMoorpark.bindPopup("<span class='venuePopupTitle'>Lucky Strike, Moorpark</b></span><br>Every Tuesday</b><br><b> 6:00pm - 11:00pm.</br><b>DJ Xenia</b><br><span class='card-tag'>All Ages</span><br><br><a target='_blank' href='https://maps.app.goo.gl/dcnAnNj6H3bXKwjQ6'>Google Maps</a><a style='color: black;'>&nbsp|&nbsp</a><a target='_blank' href='https://www.instagram.com/xenyeehaw/'>Instagram</a>").addTo(all);
 crawfordsSocial.bindPopup("<span class='venuePopupTitle'>Crawfords Social, Westlake Village</b></span><br>Every 6 Weeks on Fridays starting 8/28/26</b><br><a target='_blank' href='https://www.instagram.com/xenyeehaw/'>Click for Schedule</a><br><b>8:00pm - 12:00am.</br><b>DJ Xenia</b><br><span class='card-tag'>All Ages</span>&nbsp<span class='card-tag'>Free</span><br><br><a target='_blank' href='https://maps.app.goo.gl/5JA5MWf1j5sGx9Rk6'>Google Maps</a><a style='color: black;'>&nbsp|&nbsp</a><a target='_blank' href='https://www.instagram.com/xenyeehaw/'>Instagram</a>").addTo(all);
 hangar24Riverside.bindPopup("<span class='venuePopupTitle'>Hangar 24, Riverside</b></span><br>Wednesdays, some Friday and Saturdays</b><br><a target='_blank' href='https://hangar24brewing.com/taprooms/riverside/'>Click for Schedule</a><br><b>8:30pm - 11:30pm</br><b>Leslie</b><br><span class='card-tag'>All Ages</span>&nbsp<span class='card-tag'>Free</span><br><br><a target='_blank' href='https://maps.app.goo.gl/nmsZgJZ2oAEmg5PZA'>Google Maps</a><a style='color: black;'>&nbsp|&nbsp</a><a target='_blank' href='https://www.instagram.com/hangar24riverside/'>Instagram</a>").addTo(all);
-theArena.bindPopup("<span class='venuePopupTitle'>The Arena, Simi Valley</b></span><br>Most Sundays,</b><br><a target='_blank' href='https://www.instagram.com/xenyeehaw/'>Click for Schedule</a><br><b>7:00pm - 11:00pm</br><b>DJ Xenia</b><br><span class='card-tag'>All Ages Until 10:00pm</span><br><span class='card-tag'>21+ After 10:00pm</span><br><br><a target='_blank' href='https://maps.app.goo.gl/2CVEUyz5mSYkQCF98'>Google Maps</a><a style='color: black;'>&nbsp|&nbsp</a><a target='_blank' href='https://www.instagram.com/xenyeehaw/'>Instagram</a>").addTo(all);
+theArena.bindPopup("<span class='venuePopupTitle'>The Arena, Simi Valley</b></span><br>Most Sundays,</b><br><a target='_blank' href='https://www.instagram.com/xenyeehaw/'>Click for Schedule</a><br><b>7:00pm - 11:00pm</br><b>DJ Xenia</b><br><span class='card-tag'>All Ages Until 10:00pm</span><br><span class='card-tag'>21+ After 10:00pm</span><br><br><a target='_blank' href='https://maps.app.goo.gl/2CVEUyz5mSYkQCF98'>Google Maps</a><a style='color: black;'>&nbsp|&nbsp</a><a target='_blank' href='https://www.instagram.com/xenyeehaw/'>Instagram</a>"
+	+ "<br><button popovertarget='my-dialog' class='videoButton' onclick='loadVideo(\"thearena\")'>Watch Videos</button>").addTo(all);
 
 
 var currentZoom = 12;

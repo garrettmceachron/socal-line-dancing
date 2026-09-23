@@ -771,6 +771,14 @@ var theArena = L.marker([34.28361306970949, -118.78120077115085], {
 	}
 }).addTo(map);
 
+var bloomRanch = L.marker([34.46021518811951, -118.1565580258528], {
+	title: 'Bloom Ranch',
+	label: 'Bloom Ranch',
+	labelOptions: {
+	noHide: false
+	}
+}).addTo(map);
+
 
 
 
@@ -851,7 +859,7 @@ function showNames() {
 	crawfordsSocial.bindTooltip('Crawfords Social', { permanent: true, direction: 'bottom', offset: [-15, 26] });
 	hangar24Riverside.bindTooltip('Hangar 24', { permanent: true, direction: 'bottom', offset: [-15, 26] });
 	theArena.bindTooltip('The Arena', { permanent: true, direction: 'top', offset: [-15, -10] });
-	
+	bloomRanch.bindTooltip('Bloom Ranch', { permanent: true, direction: 'bottom', offset: [-15, 26] });
 
 	showNameYesNo = 1;
 	
@@ -931,6 +939,7 @@ function showNames() {
 	crawfordsSocial.unbindTooltip();
 	hangar24Riverside.unbindTooltip();
 	theArena.unbindTooltip();
+	bloomRanch.unbindTooltip();
 	
 	showNameYesNo = 0;
 	
@@ -957,11 +966,13 @@ var showHideAll = 1;
 		'redengine',
 		'davenbusters',
 	    'tarantulahill',
+		'canyon',
 		'thearena',
 		'grillonthegreen',
 		'luckystrikemoorpark',
-		'canyon',
+		'cowboypalacesaloon',
 		'santaclaritasportscenter',
+		'bloomranch',
 		'desert5spot',
 		'montanas',
 	];
@@ -1043,9 +1054,19 @@ function loadVideo(venueName) {
 					videoUsername = "linedancingwithhay"
 				}	
 			if (venueName == "luckystrikemoorpark") {
-					videoCode = "7688091973080698126";
+					videoCode = "7686191508944375053";
 					document.getElementById('dialogTitle').innerHTML = "Lucky Strike<br>Moorpark, CA";
+					videoUsername = "dancewithsagey"
+				}	
+			if (venueName == "bloomranch") {
+					videoCode = "7686328645194943757";
+					document.getElementById('dialogTitle').innerHTML = "Bloom Ranch<br>Acton, CA";
 					videoUsername = "xenyeehaw"
+				}	
+			if (venueName == "cowboypalacesaloon") {
+					videoCode = "7638506941676784926";
+					document.getElementById('dialogTitle').innerHTML = "Cowboy Palace Saloon<br>Chatsworth, CA";
+					videoUsername = "madeleine.quinn"
 				}	
 
 		
@@ -1108,7 +1129,8 @@ tarantulahill.bindPopup("<span class='venuePopupTitle'>Tarantula Hill Brewing Co
 	+ "<br><button popovertarget='my-dialog' class='videoButton' onclick='loadVideo(\"tarantulahill\")'>Watch Videos</button>").addTo(all);
 thePaddock.bindPopup("<span class='venuePopupTitle'>The Paddock, Thousand Oaks</b></span><br>Every Other Friday,</b><br><a href='https://www.instagram.com/thepaddock805/' target='_blank'>Click for Schedule</a><br><b> 7:00pm - 12:00am.</br><b>Oaks Local</b><br><span class='card-tag'>All Ages</span>&nbsp<span class='card-tag'>Free</span><br><br><a target='_blank' href='https://maps.app.goo.gl/ksKzaUkx9HhpegcSA'>Google Maps</a><a style='color: black;'>&nbsp|&nbsp</a><a target='_blank' href='https://www.instagram.com/thepaddock805/'>Instagram</a>").addTo(all);
 marker7.bindPopup("<span class='venuePopupTitle'>E & D Hat Co., Santa Paula</b></span><br>Saturdays About Once Every Few Months,</b><br><a target='_blank' href='https://www.instagram.com/e_and_d_hat_co/'>Click for Schedule</a><br><b> Times Vary Per Day By Event</br><b>Varied</b><br><br><a target='_blank' href='https://maps.app.goo.gl/5kQnippSpxKibQfu7'>Google Maps</a><a style='color: black;'>&nbsp|&nbsp</a><a target='_blank' href='https://www.instagram.com/e_and_d_hat_co/'>Instagram</a>").addTo(all);
-cowboyPalace.bindPopup("<span class='venuePopupTitle'>The Cowboy Palace Saloon, Chatsworth</b></span><br>Every Wednesday-Sunday</b><br><b> Often starts at 4:30pm or 6:00pm/7:00pm.<a target='_blank' href='https://thecowboypalacesaloon.com/'><br>Click for Schedule</a></b></br><b>Cowboy Palace</b><br><span class='card-tag'>21+</span>&nbsp<span class='card-tag'>Live Music & DJ</span><br><br><a target='_blank' href='https://maps.app.goo.gl/69NiXnSVz59GiE7x9'>Google Maps</a><a style='color: black;'>&nbsp|&nbsp</a><a target='_blank' href='https://www.instagram.com/cowboypalacesaloon/'>Instagram</a>").addTo(all);
+cowboyPalace.bindPopup("<span class='venuePopupTitle'>The Cowboy Palace Saloon, Chatsworth</b></span><br>Every Wednesday-Sunday</b><br><b> Often starts at 4:30pm or 6:00pm/7:00pm.<a target='_blank' href='https://thecowboypalacesaloon.com/'><br>Click for Schedule</a></b></br><b>Cowboy Palace</b><br><span class='card-tag'>21+</span>&nbsp<span class='card-tag'>Live Music & DJ</span><br><br><a target='_blank' href='https://maps.app.goo.gl/69NiXnSVz59GiE7x9'>Google Maps</a><a style='color: black;'>&nbsp|&nbsp</a><a target='_blank' href='https://www.instagram.com/cowboypalacesaloon/'>Instagram</a>"
+	+ "<br><button popovertarget='my-dialog' class='videoButton' onclick='loadVideo(\"cowboypalacesaloon\")'>Watch Videos</button>").addTo(all);
 santaClaritaSportsCenter.bindPopup("<span class='venuePopupTitle'>Santa Clarita Sports Center, Santa Clarita</b></span><br>Every Thursday</b><br><b> 7:45pm - 12:00am.</br><b>Borderline Bar</b><br><span class='card-tag'>18+</span>&nbsp<span class='card-tag'>College Night</span><br><br><a target='_blank' href='https://maps.app.goo.gl/HKpDpbRWzV4cc8PD6'>Google Maps</a><a style='color: black;'>&nbsp|&nbsp</a><a target='_blank' href='https://www.instagram.com/borderlinesantaclarita/'>Instagram</a>"
 	+ "<br><button popovertarget='my-dialog' class='videoButton' onclick='loadVideo(\"santaclaritasportscenter\")'>Watch Videos</button>").addTo(all);
 redEngine.bindPopup("<span class='venuePopupTitle'>Red Engine Brewing Company, Fillmore</b></span><br>Most Fridays</b><br><b> 7:00pm - 11:00pm.</br><b>Red Engine Brewing</b><br><span class='card-tag'>All Ages</span><br><br><a target='_blank' href='https://maps.app.goo.gl/9ALzWJRgu5z5Kjsu8'>Google Maps</a><a style='color: black;'>&nbsp|&nbsp</a><a target='_blank' href='https://www.instagram.com/redenginebrewing/'>Instagram</a>"
@@ -1183,7 +1205,8 @@ crawfordsSocial.bindPopup("<span class='venuePopupTitle'>Crawfords Social, Westl
 hangar24Riverside.bindPopup("<span class='venuePopupTitle'>Hangar 24, Riverside</b></span><br>Wednesdays, some Friday and Saturdays</b><br><a target='_blank' href='https://hangar24brewing.com/taprooms/riverside/'>Click for Schedule</a><br><b>8:30pm - 11:30pm</br><b>Leslie</b><br><span class='card-tag'>All Ages</span>&nbsp<span class='card-tag'>Free</span><br><br><a target='_blank' href='https://maps.app.goo.gl/nmsZgJZ2oAEmg5PZA'>Google Maps</a><a style='color: black;'>&nbsp|&nbsp</a><a target='_blank' href='https://www.instagram.com/hangar24riverside/'>Instagram</a>").addTo(all);
 theArena.bindPopup("<span class='venuePopupTitle'>The Arena, Simi Valley</b></span><br>Most Sundays,</b><br><a target='_blank' href='https://www.instagram.com/xenyeehaw/'>Click for Schedule</a><br><b>7:00pm - 11:00pm</br><b>DJ Xenia</b><br><span class='card-tag'>All Ages Until 10:00pm</span><br><span class='card-tag'>21+ After 10:00pm</span><br><br><a target='_blank' href='https://maps.app.goo.gl/2CVEUyz5mSYkQCF98'>Google Maps</a><a style='color: black;'>&nbsp|&nbsp</a><a target='_blank' href='https://www.instagram.com/xenyeehaw/'>Instagram</a>"
 	+ "<br><button popovertarget='my-dialog' class='videoButton' onclick='loadVideo(\"thearena\")'>Watch Videos</button>").addTo(all);
-
+bloomRanch.bindPopup("<span class='venuePopupTitle'>Bloom Ranch, Acton</b></span><br>Every Last Saturday of The Month,</b><br><a target='_blank' href='https://www.instagram.com/dancing_with_katrina/'>Click for Schedule</a><br><b>4:00pm - 7:00pm</br><b>Varied DJs & Dancing With Katrina</b><br><span class='card-tag'>All Ages</span>&nbsp<span class='card-tag'>Outdoors</span><br><br><a target='_blank' href='https://maps.app.goo.gl/PA5ZNHkTSpXQwHNo9'>Google Maps</a><a style='color: black;'>&nbsp|&nbsp</a><a target='_blank' href='https://www.instagram.com/dancing_with_katrina/'>Instagram</a>"
+	+ "<br><button popovertarget='my-dialog' class='videoButton' onclick='loadVideo(\"bloomranch\")'>Watch Videos</button>").addTo(all);
 
 var currentZoom = 12;
 
@@ -1757,6 +1780,14 @@ hangar24Riverside.on('click', function(e){
 });
 
 theArena.on('click', function(e){
+	if (currentZoom < 12)
+    	map.setView(e.target.getLatLng(), markerZoomLevel);
+	else  if (currentZoom == 12 || currentZoom == 13)
+		map.setView(e.target.getLatLng());
+
+});
+
+bloomRanch.on('click', function(e){
 	if (currentZoom < 12)
     	map.setView(e.target.getLatLng(), markerZoomLevel);
 	else  if (currentZoom == 12 || currentZoom == 13)

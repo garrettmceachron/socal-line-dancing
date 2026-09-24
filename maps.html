@@ -1036,7 +1036,8 @@ function loadVideo(venueName) {
 				 }
 			if (venueName == "santaclaritasportscenter") {
 					videoCode = "7601352791780592926";
-					document.getElementById('dialogTitle').innerHTML = "Santa Clarita Sports Center<br>Santa Clarita, CA<br>Video by <a href='https://www.tiktok.com/@katrinanichols0/video/7601352791780592926'>@katrinanichols0</a>";
+					document.getElementById('dialogTitle').innerHTML = "Santa Clarita Sports Center<br>Santa Clarita, CA";
+					videoUsername = "katrinanichols0";
 				}
 			if (venueName == "montanas") {
 					videoCode = "7661369695651613965";
@@ -1115,7 +1116,7 @@ function loadVideo(venueName) {
 		}
 		
 		if (videoUsername != "")
-				document.getElementById('dialogTitle').innerHTML += "<br>Video by <a href='https://www.tiktok.com/@" + videoUsername + "/video/" + videoCode + "' target='_blank'>@" + videoUsername + "</a>";
+				document.getElementById('dialogTitle').innerHTML += "<br>Video by <a href='https://www.tiktok.com/@" + videoUsername + "/video/" + videoCode + "' target='_blank'>@" + videoUsername + " <img src='images/open_in_new_24dp_5985E1_FILL0_wght400_GRAD0_opsz24.svg'></a>";
 		
 		
 		document.getElementById("acceptCookiesPolicy").onclick = function(){localStorage.setItem("cookies", "1"); loadVideo(venueName);};

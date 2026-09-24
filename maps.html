@@ -1116,7 +1116,7 @@ function loadVideo(venueName) {
 		}
 		
 		if (videoUsername != "")
-				document.getElementById('dialogTitle').innerHTML += "<br>Video by <a href='https://www.tiktok.com/@" + videoUsername + "/video/" + videoCode + "' target='_blank'>@" + videoUsername + " <img src='images/open_in_new_24dp_5985E1_FILL0_wght400_GRAD0_opsz24.svg'></a>";
+				document.getElementById('dialogTitle').innerHTML += "<br>Video by <a href='https://www.tiktok.com/@" + videoUsername + "/video/" + videoCode + "' target='_blank'>@" + videoUsername + " <img src='images/open_in_new_24dp_5985E1_FILL0_wght400_GRAD0_opsz24.svg' style='width: 20px;'></a>";
 		
 		
 		document.getElementById("acceptCookiesPolicy").onclick = function(){localStorage.setItem("cookies", "1"); loadVideo(venueName);};

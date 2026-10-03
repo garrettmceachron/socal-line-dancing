@@ -223,14 +223,6 @@ var thePaddock = L.marker([34.1784215,-118.85609,124], {
 	}
 }).addTo(map);
 
-var marker7 = L.marker([34.352674, -119.063679], {
-	title: 'E & D Hat Co.',
-	label: 'E & D Hat Co.',
-	labelOptions: {
-	noHide: false
-	}
-}).addTo(map);
-
 var cowboyPalace = L.marker([34.2575305,-118.6015038,816], {
 	title: 'The Cowboy Palace Saloon',
 	label: 'The Cowboy Palace Saloon',
@@ -791,7 +783,6 @@ function showNames() {
 	davenbusters.bindTooltip("Dave & Buster's", { permanent: true, direction: 'bottom', offset: [-16, 25] });
 	tarantulahill.bindTooltip('Tarantula Hill & Brewing Co.', { permanent: true, direction: 'bottom', offset: [-16, 30] });
 	thePaddock.bindTooltip('The Paddock', { permanent: true, direction: 'bottom', offset: [-16, 30] });
-	marker7.bindTooltip('E & D Hat Co.', { permanent: true, direction: 'bottom', offset: [-16, 30] });
 	cowboyPalace.bindTooltip('The Cowboy Palace Saloon', { permanent: true, direction: 'bottom', offset: [-16, 30] });
 	santaClaritaSportsCenter.bindTooltip('Santa Clarita Sports Center', { permanent: true, direction: 'bottom', offset: [-16, 30] });
 	redEngine.bindTooltip('Red Engine Brewing Company', { permanent: true, direction: 'bottom', offset: [-16, 25] });
@@ -871,7 +862,6 @@ function showNames() {
 	davenbusters.unbindTooltip();
 	tarantulahill.unbindTooltip();
     thePaddock.unbindTooltip();
-	marker7.unbindTooltip();
 	cowboyPalace.unbindTooltip();
 	santaClaritaSportsCenter.unbindTooltip();
 	redEngine.unbindTooltip();
@@ -966,6 +956,7 @@ var showHideAll = 1;
 		'redengine',
 		'davenbusters',
 	    'tarantulahill',
+		'thepaddock',
 		'canyon',
 		'thearena',
 		'dancecreations',
@@ -1075,6 +1066,11 @@ function loadVideo(venueName) {
 					document.getElementById('dialogTitle').innerHTML = "Cowboy Palace Saloon<br>Chatsworth, CA";
 					videoUsername = "madeleine.quinn"
 				}	
+			if (venueName == "thepaddock") {
+					videoCode = "7682601673805647117";
+					document.getElementById('dialogTitle').innerHTML = "The Paddock<br>Thousand Oaks, CA";
+					videoUsername = "dancingwithdev5678"
+				}		
 
 		
 			videoVenueIndex = videoVenueNames.indexOf(venueName);
@@ -1134,8 +1130,8 @@ davenbusters.bindPopup("<span class='venuePopupTitle'>Dave & Buster's, Thousand 
 	+ "<br><button popovertarget='my-dialog' class='videoButton' onclick='loadVideo(\"davenbusters\")'>Watch Videos</button>").addTo(all);
 tarantulahill.bindPopup("<span class='venuePopupTitle'>Tarantula Hill Brewing Co., Thousand Oaks</b></span><br>Once a Month on Saturdays,</b><br><a href='https://www.instagram.com/borderlinebar/' target='_blank'>Click for Schedule</a><br><b> 6:00pm - 12:00/1am.</br><b>Borderline Bar</b><br><span class='card-tag'>21+</span>&nbsp<span class='card-tag'>Outdoor Event</span><br><br><a target='_blank' href='https://maps.app.goo.gl/31fAgQSM9AJauomv6'>Google Maps</a><a style='color: black;'>&nbsp|&nbsp</a><a target='_blank' href='https://www.instagram.com/borderlinebar/'>Instagram</a>"
 	+ "<br><button popovertarget='my-dialog' class='videoButton' onclick='loadVideo(\"tarantulahill\")'>Watch Videos</button>").addTo(all);
-thePaddock.bindPopup("<span class='venuePopupTitle'>The Paddock, Thousand Oaks</b></span><br>Every Other Friday,</b><br><a href='https://www.instagram.com/thepaddock805/' target='_blank'>Click for Schedule</a><br><b> 7:00pm - 12:00am.</br><b>Oaks Local</b><br><span class='card-tag'>All Ages</span>&nbsp<span class='card-tag'>Free</span><br><br><a target='_blank' href='https://maps.app.goo.gl/ksKzaUkx9HhpegcSA'>Google Maps</a><a style='color: black;'>&nbsp|&nbsp</a><a target='_blank' href='https://www.instagram.com/thepaddock805/'>Instagram</a>").addTo(all);
-marker7.bindPopup("<span class='venuePopupTitle'>E & D Hat Co., Santa Paula</b></span><br>Saturdays About Once Every Few Months,</b><br><a target='_blank' href='https://www.instagram.com/e_and_d_hat_co/'>Click for Schedule</a><br><b> Times Vary Per Day By Event</br><b>Varied</b><br><br><a target='_blank' href='https://maps.app.goo.gl/5kQnippSpxKibQfu7'>Google Maps</a><a style='color: black;'>&nbsp|&nbsp</a><a target='_blank' href='https://www.instagram.com/e_and_d_hat_co/'>Instagram</a>").addTo(all);
+thePaddock.bindPopup("<span class='venuePopupTitle'>The Paddock, Thousand Oaks</b></span><br>Every Other Friday,</b><br><a href='https://www.instagram.com/thepaddock805/' target='_blank'>Click for Schedule</a><br><b> 7:00pm - 12:00am.</br><b>Oaks Local</b><br><span class='card-tag'>All Ages</span>&nbsp<span class='card-tag'>Free</span><br><br><a target='_blank' href='https://maps.app.goo.gl/ksKzaUkx9HhpegcSA'>Google Maps</a><a style='color: black;'>&nbsp|&nbsp</a><a target='_blank' href='https://www.instagram.com/thepaddock805/'>Instagram</a>"
+	+ "<br><button popovertarget='my-dialog' class='videoButton' onclick='loadVideo(\"thepaddock\")'>Watch Videos</button>").addTo(all);
 cowboyPalace.bindPopup("<span class='venuePopupTitle'>The Cowboy Palace Saloon, Chatsworth</b></span><br>Every Wednesday-Sunday</b><br><b> Often starts at 4:30pm or 6:00pm/7:00pm.<a target='_blank' href='https://thecowboypalacesaloon.com/'><br>Click for Schedule</a></b></br><b>Cowboy Palace</b><br><span class='card-tag'>21+</span>&nbsp<span class='card-tag'>Live Music & DJ</span><br><br><a target='_blank' href='https://maps.app.goo.gl/69NiXnSVz59GiE7x9'>Google Maps</a><a style='color: black;'>&nbsp|&nbsp</a><a target='_blank' href='https://www.instagram.com/cowboypalacesaloon/'>Instagram</a>"
 	+ "<br><button popovertarget='my-dialog' class='videoButton' onclick='loadVideo(\"cowboypalacesaloon\")'>Watch Videos</button>").addTo(all);
 santaClaritaSportsCenter.bindPopup("<span class='venuePopupTitle'>Santa Clarita Sports Center, Santa Clarita</b></span><br>Every Thursday</b><br><b> 7:45pm - 12:00am.</br><b>Borderline Bar</b><br><span class='card-tag'>18+</span>&nbsp<span class='card-tag'>College Night</span><br><br><a target='_blank' href='https://maps.app.goo.gl/HKpDpbRWzV4cc8PD6'>Google Maps</a><a style='color: black;'>&nbsp|&nbsp</a><a target='_blank' href='https://www.instagram.com/borderlinesantaclarita/'>Instagram</a>"
@@ -1247,14 +1243,6 @@ thePaddock.on('click', function(e){
   map.setView(e.target.getLatLng(), markerZoomLevel);
 else if (currentZoom == 12 || currentZoom == 13)
 	map.setView(e.target.getLatLng());
-
-});
-
-marker7.on('click', function(e){
-	if (currentZoom < 12)
-    map.setView(e.target.getLatLng(), markerZoomLevel);
-	else if (currentZoom == 12 || currentZoom == 13)
-    map.setView(e.target.getLatLng());
 
 });
 

@@ -82,8 +82,8 @@
   <span id="instagramVideoBlock" style="display: none; height: 550px; width: 300px; background-color: black;"><a id="instagramVideoLink" href="https://www.instagram.com/p/DVewvyHkjD1/" style="text-decoration: none;" target="_blank"><img src="images/Instagram_Glyph_Gradient.png" style="display: block; width: 100px; position: absolute; right: 100px; margin-top: 50%;"><br><br><span style="text-decoration: underline; position: relative; font-size: 21px; display: block; margin-top: 80%; font-weight: 600;" href="https://www.instagram.com/p/DU6kQy7Apv_/" target="_blank">View Video On Instagram</span><br></span>
   </a><span id="cookiesPreview" style="display: none; height: 550px; width: 300px; background-color: black;"><br><img src="images/icon.png" style="display: block; width: 100px; position: absolute; right: 100px; margin-top: 50%;"><br><br><span style="position: relative; font-size: 20px; display: block; margin-top: 80%; font-weight: 600;"><button id="acceptCookiesPolicy">Accept cookie policy</button><br><a href="cookieprivacypolicy" target="_blank" style="font-size: 20px;">View cookie policy here</a></input><br><br>Or</span><br><a id="CookiesPreviewLink" href="" style="text-decoration: none;" target="_blank"><span style="text-decoration: underline; position: relative; font-size: 21px; display: block; font-weight: 600;" href="https://www.instagram.com/p/DU6kQy7Apv_/" target="_blank">View Video On TikTok</span><br></span>
   </a><button popovertarget="my-dialog" popovertargetaction="hide" style="background-color: black; border: 4px solid black; color: white; font-size: 20px;" onclick="document.getElementById('mediaPlayer').src='null'; document.getElementById('popupDiv').style.display = 'none';">Close</button>
-  <span id="nextVideoButton" onclick="loadVideo('next');" style="position: fixed; right: 12px; top: 45%; color: white; z-index: 99999999999999; font-size: 36px; transform:scale(1.9,3); text-shadow: #000000 0px 0px 4px; cursor: pointer;">></span>
-  <span id="previousVideoButton" onclick="loadVideo('previous');" style="position: fixed; left: 12px; top: 45%; color: white; z-index: 99999999999999; font-size: 36px; transform:scale(1.9,3); text-shadow: #000000 0px 0px 4px; cursor: pointer;"><</span>
+  <span id="nextVideoButton" onclick="loadVideo('next');" style="position: fixed; right: 12px; top: 45%; color: white; z-index: 99999999999999; font-size: 37px; transform:scale(1.9,3); text-shadow: #000000 0px 0px 4px; cursor: pointer;">></span>
+  <span id="previousVideoButton" onclick="loadVideo('previous');" style="position: fixed; left: 12px; top: 45%; color: white; z-index: 99999999999999; font-size: 37px; transform:scale(1.9,3); text-shadow: #000000 0px 0px 4px; cursor: pointer;"><</span>
     
 </dialog>
 	
@@ -981,10 +981,15 @@ function loadVideo(venueName) {
 		var videoCode = "";
 		var videoUsername = "";
 		
-		if (window.screen.width > 800)
+		if (window.screen.width > 800 && window.screen.height > 900) {
+			document.getElementById("mediaPlayer").style.height = "650px";
 			document.getElementById("mediaPlayer").style.width = "750px";
-		else
-			document.getElementById("mediaPlayer").style.width = "300px";
+		}
+		else {
+			document.getElementById("mediaPlayer").style.height = "560px";
+			document.getElementById("mediaPlayer").style.width = "335px";
+		}
+			
 		
 		if (venueName == "next") {
 		   videoVenueIndex++;

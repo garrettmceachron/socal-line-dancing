@@ -739,14 +739,6 @@ var luckyStrikeMoorpark = L.marker([34.2778780469178, -118.87122319029868], {
 	}
 }).addTo(map);
 
-var crawfordsSocial = L.marker([34.15238690584648, -118.82822144659464], {
-	title: 'Crawfords Social',
-	label: 'Crawfords Social',
-	labelOptions: {
-	noHide: false
-	}
-}).addTo(map);
-
 var hangar24Riverside = L.marker([33.956571771798686, -117.33170367481638], {
 	title: 'Hangar 24',
 	label: 'Hangar 24',
@@ -847,7 +839,6 @@ function showNames() {
 	shootersBarHemet.bindTooltip('Shooters Bar', { permanent: true, direction: 'bottom', offset: [-15, 26] });
     tahquitzPines.bindTooltip('Tahquitz Pines', { permanent: true, direction: 'bottom', offset: [-15, 26] });
 	luckyStrikeMoorpark.bindTooltip('Lucky Strike', { permanent: true, direction: 'bottom', offset: [-15, 10] });
-	crawfordsSocial.bindTooltip('Crawfords Social', { permanent: true, direction: 'bottom', offset: [-15, 26] });
 	hangar24Riverside.bindTooltip('Hangar 24', { permanent: true, direction: 'bottom', offset: [-15, 26] });
 	theArena.bindTooltip('The Arena', { permanent: true, direction: 'top', offset: [-15, -10] });
 	bloomRanch.bindTooltip('Bloom Ranch', { permanent: true, direction: 'bottom', offset: [-15, 26] });
@@ -926,7 +917,6 @@ function showNames() {
 	shootersBarHemet.unbindTooltip();
 	tahquitzPines.unbindTooltip();
 	luckyStrikeMoorpark.unbindTooltip();
-	crawfordsSocial.unbindTooltip();
 	hangar24Riverside.unbindTooltip();
 	theArena.unbindTooltip();
 	bloomRanch.unbindTooltip();
@@ -1210,7 +1200,6 @@ shootersBarHemet.bindPopup("<span class='venuePopupTitle'>Shooters Bar, Hemet</b
 tahquitzPines.bindPopup("<span class='venuePopupTitle'>Tahquitz Pines, Idyillwild</b></span><br>Every 2nd and 4th Tuesday,</b><br><b>6:00pm - 8:00pm.</br><b>Tahquitz Pines Line Dancing</b><br><span class='card-tag'>All Ages</span>&nbsp<span class='card-tag'>Free</span><br><span class='card-tag'>Beginner Friendly</span><br><br><a target='_blank' href='https://maps.app.goo.gl/iNfhw29DEnzUMPS68'>Google Maps</a><a style='color: black;'>&nbsp|&nbsp</a><a target='_blank' href='https://www.facebook.com/groups/574660631825190/'>Facebook</a>").addTo(all);
 luckyStrikeMoorpark.bindPopup("<span class='venuePopupTitle'>Lucky Strike, Moorpark</b></span><br>Every Tuesday</b><br><b> 6:00pm - 11:00pm.</br><b>DJ Xenia</b><br><span class='card-tag'>All Ages</span><br><br><a target='_blank' href='https://maps.app.goo.gl/dcnAnNj6H3bXKwjQ6'>Google Maps</a><a style='color: black;'>&nbsp|&nbsp</a><a target='_blank' href='https://www.instagram.com/xenyeehaw/'>Instagram</a>"
 	+ "<br><button popovertarget='my-dialog' class='videoButton' onclick='loadVideo(\"luckystrikemoorpark\")'>Watch Videos</button>").addTo(all);
-crawfordsSocial.bindPopup("<span class='venuePopupTitle'>Crawfords Social, Westlake Village</b></span><br>Every 6 Weeks on Fridays starting 8/28/26</b><br><a target='_blank' href='https://www.instagram.com/xenyeehaw/'>Click for Schedule</a><br><b>8:00pm - 12:00am.</br><b>DJ Xenia</b><br><span class='card-tag'>All Ages</span>&nbsp<span class='card-tag'>Free</span><br><br><a target='_blank' href='https://maps.app.goo.gl/5JA5MWf1j5sGx9Rk6'>Google Maps</a><a style='color: black;'>&nbsp|&nbsp</a><a target='_blank' href='https://www.instagram.com/xenyeehaw/'>Instagram</a>").addTo(all);
 hangar24Riverside.bindPopup("<span class='venuePopupTitle'>Hangar 24, Riverside</b></span><br>Wednesdays, some Friday and Saturdays</b><br><a target='_blank' href='https://hangar24brewing.com/taprooms/riverside/'>Click for Schedule</a><br><b>8:30pm - 11:30pm</br><b>Leslie</b><br><span class='card-tag'>All Ages</span>&nbsp<span class='card-tag'>Free</span><br><br><a target='_blank' href='https://maps.app.goo.gl/nmsZgJZ2oAEmg5PZA'>Google Maps</a><a style='color: black;'>&nbsp|&nbsp</a><a target='_blank' href='https://www.instagram.com/hangar24riverside/'>Instagram</a>").addTo(all);
 theArena.bindPopup("<span class='venuePopupTitle'>The Arena, Simi Valley</b></span><br>Most Sundays,</b><br><a target='_blank' href='https://www.instagram.com/xenyeehaw/'>Click for Schedule</a><br><b>7:00pm - 11:00pm</br><b>DJ Xenia</b><br><span class='card-tag'>All Ages Until 10:00pm</span><br><span class='card-tag'>21+ After 10:00pm</span><br><br><a target='_blank' href='https://maps.app.goo.gl/2CVEUyz5mSYkQCF98'>Google Maps</a><a style='color: black;'>&nbsp|&nbsp</a><a target='_blank' href='https://www.instagram.com/xenyeehaw/'>Instagram</a>"
 	+ "<br><button popovertarget='my-dialog' class='videoButton' onclick='loadVideo(\"thearena\")'>Watch Videos</button>").addTo(all);
@@ -1757,14 +1746,6 @@ tahquitzPines.on('click', function(e){
 });
 
 luckyStrikeMoorpark.on('click', function(e){
-	if (currentZoom < 12)
-    	map.setView(e.target.getLatLng(), markerZoomLevel);
-	else  if (currentZoom == 12 || currentZoom == 13)
-		map.setView(e.target.getLatLng());
-
-});
-
-crawfordsSocial.on('click', function(e){
 	if (currentZoom < 12)
     	map.setView(e.target.getLatLng(), markerZoomLevel);
 	else  if (currentZoom == 12 || currentZoom == 13)

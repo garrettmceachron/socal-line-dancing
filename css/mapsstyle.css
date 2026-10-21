@@ -13,6 +13,10 @@
  .map {
 	  position: fixed; top: 100px; z-index: 0; height: 900px; width: 100%;
  }
+
+ .videoButton {
+	 border: 2px solid #a1a1a1; background-color: #ededed; position: relative;
+}
  
  @media (orientation: landscape) {
 	 .map {

@@ -75,6 +75,7 @@
 	 <button type="button" class="ShowNames" onclick="showNames();"> Toggle Venue Names </button>
 	 <br><br><br><br>
 	 <b class="homeParagraph" style="position: fixed; left: 25px; top: 50px;">Updated 2026 - Subject to Change</b>
+	 <img id="baseMapImage" src="images/satelliteMap.png" onclick="nextBaseMap();" style="position: fixed; z-index: 9999999999; width: 100px; border: 4px solid gray; top: 175px; right: 20px">
 	 <div id="popupDiv" style="display: none; background-color: black; opacity: 0.6; width: 100%; height: 100%; position: fixed; top: 0px; z-index: 99999999999;" onclick="document.getElementById('mediaPlayer').src='null'; document.getElementById('popupDiv').style.display = 'none';"></div>
 <dialog id="my-dialog" popover style="background-image: linear-gradient(to top, black, #211e24); color: white;">
 <p id="dialogTitle" style="font-size: 22px; text-decoration: underline; font-weight: 650; color: white;">Dave & Busters<br>Thousand Oaks, CA</p>
@@ -138,10 +139,24 @@ maxZoom: 19,
 
 var baseMaps = {
     "OpenStreetMapGI": openStreetMap,
-    "ERSISatelliteMap": ersiSatelliteMap
+    "ERSISatelliteMap": ersiSatelliteMap,
 };
-	 	  
-	   var layerControl = L.control.layers(baseMaps).addTo(map);
+
+function nextBaseMap() {
+	var currentMapImage = document.getElementById("baseMapImage").src;
+	
+	map.removeLayer(openStreetMap);
+	map.removeLayer(ersiSatelliteMap);
+
+	if (currentMapImage.includes("images/satelliteMap.png")) {
+		baseMaps["ERSISatelliteMap"].addTo(map);
+		document.getElementById("baseMapImage").src = "images/openStreetMaps.png";		
+	}
+	else {
+		baseMaps["OpenStreetMapGI"].addTo(map);
+		document.getElementById("baseMapImage").src = "images/satelliteMap.png";	
+	}
+}
  
 
 var largerIcon = new L.Icon({

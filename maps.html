@@ -297,15 +297,6 @@ var danceCreations = L.marker([34.273437, -118.781634], {
 	}
 }).addTo(map);
 
-var varsityClub = L.marker([34.24287759584501, -119.20879469401014], {
-	title: 'Varsity Club',
-	label: 'Varsity Club',
-	icon: upOffsetIcon,
-	labelOptions: {
-	noHide: false
-	}
-}).addTo(map);
-
 var grillOnTheGreen = L.marker([34.2897912,-118.695882,898], {
 	title: 'Grill On The Green',
 	label: 'Grill On The Green',
@@ -699,14 +690,6 @@ var theBarn = L.marker([34.25154462089485, -118.92147448769454], {
 	}
 }).addTo(map);
 
-var sheisgracielou = L.marker([33.177680087663084, -117.36460818605713], {
-	title: 'sheisgracielou',
-	label: 'sheisgracielou',
-	labelOptions: {
-	noHide: false
-	}
-}).addTo(map);
-
 var shootersBarHemet = L.marker([33.74703803895462, -116.97141418523856], {
 	title: 'Shooters Bar',
 	label: 'Shooters Bar',
@@ -774,7 +757,6 @@ function showNames() {
 	magnavinoCellars.bindTooltip('Magnavino Cellars', { permanent: true, direction: 'bottom', offset: [-16, 25] });
 	streyCellars.bindTooltip('Strey Cellars', { permanent: true, direction: 'bottom', offset: [-16, 25] });
 	danceCreations.bindTooltip('Dance Creations', { permanent: true, direction: 'bottom', offset: [0, 0] });
-	varsityClub.bindTooltip('Varsity Club', { permanent: true, direction: 'bottom', offset: [0, 5] });
 	grillOnTheGreen.bindTooltip('Grill On The Green', { permanent: true, direction: 'top', offset: [-16, -5] });
 	stampede.bindTooltip('Stampede', { permanent: true, direction: 'bottom', offset: [-15, 26] });
 	westwoodCoast.bindTooltip('Westwood<br> Coast', { permanent: true, direction: 'bottom', offset: [-15, 26] });
@@ -824,7 +806,6 @@ function showNames() {
 	secondPCH.bindTooltip('2ND & PCH', { permanent: true, direction: 'bottom', offset: [-15, 46] });
 	creekside.bindTooltip('The Creekside', { permanent: true, direction: 'top', offset: [-15, -11] });
 	theBarn.bindTooltip('The Barn', { permanent: true, direction: 'bottom', offset: [-16, 25] });
-	sheisgracielou.bindTooltip('sheisgracielou', { permanent: true, direction: 'bottom', offset: [-15, 66] });
 	shootersBarHemet.bindTooltip('Shooters Bar', { permanent: true, direction: 'bottom', offset: [-15, 26] });
     tahquitzPines.bindTooltip('Tahquitz Pines', { permanent: true, direction: 'bottom', offset: [-15, 26] });
 	luckyStrikeMoorpark.bindTooltip('Lucky Strike', { permanent: true, direction: 'bottom', offset: [-15, 10] });
@@ -849,7 +830,6 @@ function showNames() {
 	magnavinoCellars.unbindTooltip();
 	streyCellars.unbindTooltip();
 	danceCreations.unbindTooltip();
-	varsityClub.unbindTooltip();
 	grillOnTheGreen.unbindTooltip();
 	stampede.unbindTooltip();
 	westwoodCoast.unbindTooltip();
@@ -899,7 +879,6 @@ function showNames() {
 	secondPCH.unbindTooltip();
 	creekside.unbindTooltip();
 	theBarn.unbindTooltip();
-	sheisgracielou.unbindTooltip();
 	shootersBarHemet.unbindTooltip();
 	tahquitzPines.unbindTooltip();
 	luckyStrikeMoorpark.unbindTooltip();
@@ -1116,7 +1095,6 @@ magnavinoCellars.bindPopup("<span class='venuePopupTitle'>Magnavino Cellars, Oxn
 streyCellars.bindPopup("<span class='venuePopupTitle'>Strey Cellars, Oxnard</b></span><br>Once a Month on Sundays,</b><br><a target='_blank' href='https://www.streycellars.com/event-type-2/barfly/'>Click for Schedule</a><br><b> 2:00pm - 5:00pm.</br><b>Caught Red Handed (Older Live Country Style)</b><br><span class='card-tag'>Live Music (Older Country)</span><br><br><a target='_blank' href='https://maps.app.goo.gl/HgyKovkwrs9Ndfxr8'>Google Maps</a><a style='color: black;'>&nbsp|&nbsp</a><a target='_blank' href='https://www.instagram.com/streycellars/'>Instagram</a>").addTo(all);
 danceCreations.bindPopup("<span class='venuePopupTitle'>Dance Creations, Simi Valley</b></span><br>Every Third Sunday</b><br><b> 5:00pm - 8:00pm.</br><b>Roanna Battocchio</b><br><span class='card-tag'>All Ages</span>&nbsp<span class='card-tag'>Int. Advanced Only</span><br><br><a target='_blank' href='https://maps.app.goo.gl/5AZLpLqANhaoDE368'>Google Maps</a><a style='color: black;'>&nbsp|&nbsp</a><a target='_blank' href='https://www.instagram.com/roannabattocchio/'>Instagram</a>"
 	+ "<br><button popovertarget='my-dialog' class='videoButton' onclick='loadVideo(\"dancecreations\")'>Watch Videos</button>").addTo(all);
-varsityClub.bindPopup("<span class='venuePopupTitle'>Varsity Club, Ventura</b></span><br>Saturdays About Once Every Few Months,</b><br><a target='_blank' href='https://instagram.com/thevarsityclubatsis/'>Click for Schedule</a><br><b> Times Vary.</br><b>Ventucky Stompers</b><br><span class='card-tag'>All Ages</span><br><br><a target='_blank' href='https://maps.app.goo.gl/8LDE7vzYDr8XyuEMA'>Google Maps</a><a style='color: black;'>&nbsp|&nbsp</a><a target='_blank' href='https://instagram.com/thevarsityclubatsis/'>Instagram</a>").addTo(all);
 grillOnTheGreen.bindPopup("<span class='venuePopupTitle'>Grill On The Green, Simi Valley</b></span><br>Every Wednesday</b><br><b> 6:00pm - 8:00pm.</br><b>Varied</b><br><span class='card-tag'>All Ages</span>&nbsp<span class='card-tag'>Free</span><br><br><a target='_blank' href='https://maps.app.goo.gl/yh9NKW1QMrYNhxf99'>Google Maps</a><a style='color: black;'>&nbsp|&nbsp</a><a target='_blank' href='https://www.instagram.com/countryrosedancers/'>Instagram</a>"
 	+ "<br><button popovertarget='my-dialog' class='videoButton' onclick='loadVideo(\"grillonthegreen\")'>Watch Videos</button>").addTo(all);
 conejoValleyLodge.bindPopup("<span class='venuePopupTitle'>Conejo Valley Lodge #807, Thousand Oaks</b></span><br><span id='ConejoMasonic'>Every Thursday</span><br><b> 6:00pm - 9:30pm.</br><b>Candy Sherwin</b><br><span class='card-tag'>All Ages</span><br><br><a target='_blank' href='https://maps.app.goo.gl/jfDkhAceYknuC4ca9'>Google Maps</a><a style='color: black;'>&nbsp|&nbsp</a><a target='_blank' href='https://www.instagram.com/candysherwin/'>Instagram</a>").addTo(all);
@@ -1170,7 +1148,6 @@ theParamount.bindPopup("<span class='venuePopupTitle'>The Paramount,<br>Los Ange
 secondPCH.bindPopup("<span class='venuePopupTitle'>2ND & PCH, Long Beach</b></span><br>Every 2nd Wednesday</b><br><b>6:00pm - 7:30pm.</br><b>DB Dance Fitness</b><br><span class='card-tag'>All Ages</span>&nbsp<span class='card-tag'>Outdoors</span><br><span class='card-tag'>Beginner Friendly</span><br><br><a target='_blank' href='https://maps.app.goo.gl/sAYtXUt3RE88QPZP7'>Google Maps</a><a style='color: black;'>&nbsp|&nbsp</a><a target='_blank' href='https://www.instagram.com/db.dancefitness/'>Instagram</a>").addTo(all);
 creekside.bindPopup("<span class='venuePopupTitle'>The Creekside, Santa Barbara</b></span><br>Every Wednesday</b><br><b>Starts at 7:30pm</br><b>Varied</b><br><span class='card-tag'>18+</span><br><br><a target='_blank' href='https://maps.app.goo.gl/4d9e6irWTwQQBmSf6'>Google Maps</a><a style='color: black;'>&nbsp|&nbsp</a><a target='_blank' href='https://www.instagram.com/thecreeksidesb/'>Instagram</a>").addTo(all);
 theBarn.bindPopup("<span class='venuePopupTitle'>The Barn, Santa Rosa Valley</b></span><br>Every Monday</b><br><b> 7:00pm - 9:00pm.</br><b>Francie Broughton</b><br><span class='card-tag'>All Ages</span><br><br><a target='_blank' href='https://maps.app.goo.gl/eFRhD1m6EMC8hxki9'>Google Maps</a><a style='color: black;'>&nbsp|&nbsp</a><a target='_blank' href='https://www.facebook.com/francie.broughton'>Facebook</a>").addTo(all);
-sheisgracielou.bindPopup("<span class='venuePopupTitle'>sheisgracielou, Oceanside</b></span><br>On Fridays,</b><br><a target='_blank' href='https://www.instagram.com/sheisgracielou/'>Click for Schedule</a><br><b>6:00pm - 9:00pm.</br><b>Varied</b><br><span class='card-tag'>All Ages</span>&nbsp<span class='card-tag'>Free</span><br><br><a target='_blank' href='https://maps.app.goo.gl/ThmFw52kqRASecqM8'>Google Maps</a><a style='color: black;'>&nbsp|&nbsp</a><a target='_blank' href='https://www.instagram.com/sheisgracielou/'>Instagram</a>").addTo(all);
 shootersBarHemet.bindPopup("<span class='venuePopupTitle'>Shooters Bar, Hemet</b></span><br>Every 1st and 3rd Tuesday,</b><br><a target='_blank' href='https://www.instagram.com/hemetlinedancing/'>Click for Schedule</a><br><b>5:00pm - 10:00pm.</br><b>Hemet Line Dancing</b><br><span class='card-tag'>All Ages</span>&nbsp<span class='card-tag'>Free</span><br><br><a target='_blank' href='https://maps.app.goo.gl/JZzGbiDraATMeFi88'>Google Maps</a><a style='color: black;'>&nbsp|&nbsp</a><a target='_blank' href='https://www.instagram.com/hemetlinedancing/'>Instagram</a>").addTo(all);
 tahquitzPines.bindPopup("<span class='venuePopupTitle'>Tahquitz Pines, Idyillwild</b></span><br>Every 2nd and 4th Tuesday,</b><br><b>6:00pm - 8:00pm.</br><b>Tahquitz Pines Line Dancing</b><br><span class='card-tag'>All Ages</span>&nbsp<span class='card-tag'>Free</span><br><span class='card-tag'>Beginner Friendly</span><br><br><a target='_blank' href='https://maps.app.goo.gl/iNfhw29DEnzUMPS68'>Google Maps</a><a style='color: black;'>&nbsp|&nbsp</a><a target='_blank' href='https://www.facebook.com/groups/574660631825190/'>Facebook</a>").addTo(all);
 luckyStrikeMoorpark.bindPopup("<span class='venuePopupTitle'>Lucky Strike, Moorpark</b></span><br>Every Tuesday</b><br><b> 6:00pm - 11:00pm.</br><b>DJ Xenia</b><br><span class='card-tag'>All Ages</span><br><br><a target='_blank' href='https://maps.app.goo.gl/dcnAnNj6H3bXKwjQ6'>Google Maps</a><a style='color: black;'>&nbsp|&nbsp</a><a target='_blank' href='https://www.instagram.com/xenyeehaw/'>Instagram</a>"
@@ -1272,14 +1249,6 @@ streyCellars.on('click', function(e){
 });
 
 danceCreations.on('click', function(e){
-	if (currentZoom < 12)
-    map.setView(e.target.getLatLng(), markerZoomLevel);
-	else  if (currentZoom == 12 || currentZoom == 13)
-	map.setView(e.target.getLatLng());
-
-});
-
-varsityClub.on('click', function(e){
 	if (currentZoom < 12)
     map.setView(e.target.getLatLng(), markerZoomLevel);
 	else  if (currentZoom == 12 || currentZoom == 13)
@@ -1672,14 +1641,6 @@ creekside.on('click', function(e){
 });
 
 theBarn.on('click', function(e){
-	if (currentZoom < 12)
-    	map.setView(e.target.getLatLng(), markerZoomLevel);
-	else  if (currentZoom == 12 || currentZoom == 13)
-		map.setView(e.target.getLatLng());
-
-});
-
-sheisgracielou.on('click', function(e){
 	if (currentZoom < 12)
     	map.setView(e.target.getLatLng(), markerZoomLevel);
 	else  if (currentZoom == 12 || currentZoom == 13)

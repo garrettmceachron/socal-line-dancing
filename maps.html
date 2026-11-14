@@ -738,6 +738,14 @@ var bloomRanch = L.marker([34.46021518811951, -118.1565580258528], {
 	}
 }).addTo(map);
 
+var breakers = L.marker([34.18359085604829, -118.8741983463661], {
+	title: 'Breakers Sports Bar',
+	label: 'Breakers Sports Bar',
+	labelOptions: {
+	noHide: false
+	}
+}).addTo(map);
+
 
 
 
@@ -812,6 +820,7 @@ function showNames() {
 	hangar24Riverside.bindTooltip('Hangar 24', { permanent: true, direction: 'bottom', offset: [-15, 26] });
 	theArena.bindTooltip('The Arena', { permanent: true, direction: 'top', offset: [-15, -10] });
 	bloomRanch.bindTooltip('Bloom Ranch', { permanent: true, direction: 'bottom', offset: [-15, 26] });
+	breakers.bindTooltip('Breakers Sports Bar', { permanent: true, direction: 'top', offset: [-15, -5] });
 
 	showNameYesNo = 1;
 	
@@ -885,6 +894,7 @@ function showNames() {
 	hangar24Riverside.unbindTooltip();
 	theArena.unbindTooltip();
 	bloomRanch.unbindTooltip();
+	breakers.unbindTooltip();
 	
 	showNameYesNo = 0;
 	
@@ -1157,6 +1167,7 @@ theArena.bindPopup("<span class='venuePopupTitle'>The Arena, Simi Valley</b></sp
 	+ "<br><button popovertarget='my-dialog' class='videoButton' onclick='loadVideo(\"thearena\")'>Watch Videos</button>").addTo(all);
 bloomRanch.bindPopup("<span class='venuePopupTitle'>Bloom Ranch, Acton</b></span><br>Every Last Saturday of The Month,</b><br><a target='_blank' href='https://www.instagram.com/dancing_with_katrina/'>Click for Schedule</a><br><b>3:00pm - 6:00pm</br><b>Varied DJs & Instructors</b><br><span class='card-tag'>All Ages</span>&nbsp<span class='card-tag'>Outdoors</span><br><br><a target='_blank' href='https://maps.app.goo.gl/PA5ZNHkTSpXQwHNo9'>Google Maps</a><a style='color: black;'>&nbsp|&nbsp</a><a target='_blank' href='https://www.instagram.com/dancing_with_katrina/'>Instagram</a>"
 	+ "<br><button popovertarget='my-dialog' class='videoButton' onclick='loadVideo(\"bloomranch\")'>Watch Videos</button>").addTo(all);
+breakers.bindPopup("<span class='venuePopupTitle'>Breakers Sports Bar, Thousand Oaks</b></span><br>Every Friday</b><br><b>6:30pm - 12:00am</br><b>DJ Josh & DI Dev</b><br><span class='card-tag'>All Ages</span><br><span class='card-tag'>Under 18 With A Parent</span><br><br><a target='_blank' href='https://maps.app.goo.gl/Wdij1wQXYFm4iRTWA'>Google Maps</a><a style='color: black;'>&nbsp|&nbsp</a><a target='_blank' href='https://www.instagram.com/dancingwithdev5678/'>Instagram</a>").addTo(all);
 
 var currentZoom = map.getZoom();
 
@@ -1693,6 +1704,14 @@ bloomRanch.on('click', function(e){
     	map.setView(e.target.getLatLng(), markerZoomLevel);
 	else  if (currentZoom == 12 || currentZoom == 13)
 		map.setView(e.target.getLatLng());
+
+});
+
+breakers.on('click', function(e){
+	if (currentZoom < 12)
+    	map.setView(e.target.getLatLng(), markerZoomLevel);
+	else  if (currentZoom == 12 || currentZoom == 13)
+	map.setView(e.target.getLatLng());
 
 });
 
